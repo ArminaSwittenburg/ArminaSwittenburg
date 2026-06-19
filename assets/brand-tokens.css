@@ -1,14 +1,27 @@
+/* Swittenburg & Company — Brand Tokens
+   Import in every composition: <link rel="stylesheet" href="../../assets/brand-tokens.css"> */
+
 :root {
+  /* Colors */
   --bg:           #0D0D0D;
   --surface:      #1A1A1A;
   --border:       #2A2A2A;
-  --accent:       #C4962A;
-  --accent-glow:  rgba(196, 150, 42, 0.4);
+  --gold:         #C4962A;
+  --gold-light:   #D4A940;
+  --gold-glow:    rgba(196, 150, 42, 0.35);
   --text:         #FFFFFF;
-  --text-dim:     #888888;
+  --text-dim:     #AAAAAA;
 
   /* Typography */
-  --font-headline: "Cormorant Garamond", "Georgia", serif;        /* hero text, scene titles */
-  --font-display:  "Playfair Display", "Georgia", serif;          /* captions, subtitles, lower-thirds */
-  --font-accent:   "Space Mono", ui-monospace, monospace;         /* override per-project for subject-matter fit */
+  --font-headline: "Cormorant Garamond", "Georgia", serif;   /* hero titles, product names */
+  --font-display:  "Playfair Display", "Georgia", serif;     /* captions, subtitles, lower-thirds */
+  --font-label:    "Cinzel", "Georgia", serif;               /* spaced-cap labels, company name */
+  --font-accent:   "Space Mono", ui-monospace, monospace;    /* override per-project */
+
+  /* Logo glow */
+  --logo-glow: drop-shadow(0 0 30px rgba(196, 150, 42, 0.5));
+
+  /* Gold rule (signature divider element) */
+  --rule-color:   #C4962A;
+  --rule-width:   1px;
 }

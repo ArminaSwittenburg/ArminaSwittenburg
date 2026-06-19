@@ -1,12 +1,32 @@
-# Armina Swittenburg — Visual Identity
+# Swittenburg & Company — Visual Identity
 
-**Fill this file in before building any compositions.** Every video in this workspace must trace its palette, typography, and motion choices back to this file. See `DESIGN.ais-example.md` for a fully worked example of the expected format.
+**This is the canonical brand reference for all AI branding videos in this workspace.**
+Every composition must trace its palette, typography, motion, and copy choices back to this file.
+
+---
+
+## Brand Context
+
+**Company:** Swittenburg & Company
+**Tagline:** *Strategic Clarity. Scalable Execution.*
+**Secondary tagline:** *Move Different. Scale Different.*
+**Mission:** AI tools for leaders and everyday people.
+**Creator:** Armina Swittenburg — @swittenburgco · @arminaswittenburg
+
+**Video scope for this workspace:** AI branding videos only.
+- Everyday AI™ Playbook promos
+- Executive Prompt Playbook™ promos
+- Everyday AI™ 3X Challenge content
+- Everyday AI™ Tribe — 10K by 2026 content
+- General Swittenburg & Company brand content
+
+*(Fashion brand videos → separate session/workspace)*
 
 ---
 
 ## Style Prompt
 
-Precision meets reinvention — deep black canvas, warm gold authority, clean white clarity. The vibe is New Wall Street: old money discipline crossed with Web3 momentum. Compositions feel like a financial terminal coming to life with confidence and purpose.
+Premium executive energy meets everyday accessibility — deep black canvas, warm gold authority, crisp white clarity. The brand sits at the intersection of Wall Street discipline and AI empowerment: polished enough for C-suite leaders, approachable enough for everyday people reinventing themselves. Compositions feel like a high-end business book coming to life — thin gold rules, spaced serif caps, confident stillness punctuated by precise motion. Never loud. Always intentional.
 
 ---
 
@@ -14,55 +34,92 @@ Precision meets reinvention — deep black canvas, warm gold authority, clean wh
 
 | Token | Hex | Role |
 |---|---|---|
-| `--bg` | `#0D0D0D` | Primary background |
-| `--surface` | `#1A1A1A` | Cards, panels, surfaces |
-| `--accent` | `#C4962A` | Primary accent — gold highlights, CTAs, numbers |
-| `--accent-glow` | `rgba(196,150,42,0.4)` | Gold halo glow (drop-shadow, text-shadow) |
+| `--bg` | `#0D0D0D` | Primary background (near-black — used in all brand assets) |
+| `--surface` | `#1A1A1A` | Cards, panels, overlay surfaces |
+| `--border` | `#2A2A2A` | Hairlines, dividers |
+| `--gold` | `#C4962A` | Primary accent — logo, headlines, CTAs, rules, badges |
+| `--gold-light` | `#D4A940` | Lighter gold for gradients, shimmer highlights |
+| `--gold-glow` | `rgba(196,150,42,0.35)` | Gold halo — drop-shadow and text-shadow on hero text |
 | `--text` | `#FFFFFF` | Primary text |
-| `--text-dim` | `#888888` | Secondary/meta text |
-| `--border` | `#2A2A2A` | Borders, dividers, hairlines |
+| `--text-dim` | `#AAAAAA` | Secondary/meta text, fine print |
+
+**Rule:** Never use more than these colors in a single video. Gold owns one idea per scene.
 
 ---
 
 ## Typography
 
-- **Headline font — Cormorant Garamond (SemiBold 600 / Bold 700)** — luxury editorial serif. Use for: hero text, scene titles, big statements, logo lockups. The "old money" voice.
-- **Display / Subtitles — Playfair Display (Regular 400 / Bold 700)** — high-contrast editorial serif. Use for: captions, lower-thirds, chapter titles, pull quotes. Ties directly to the Everyday AI Playbook, Executive Prompt Playbook, 3X Challenge, and Facebook Group promo brand.
-- **Accent fonts — pick per project** based on subject matter to give key words more meaning. Examples:
-  - Fintech / data / charts → `Space Mono` or `JetBrains Mono` (terminal precision)
-  - Web3 / crypto energy → `Orbitron` or `Exo 2` (forward-looking tech)
-  - Authority / legal / contracts → `EB Garamond` (institutional gravitas)
-  - Movement / urgency → `Barlow Condensed` or `Bebas Neue` (kinetic punch)
+### Headline — Cormorant Garamond
+Elegant luxury serif. The "old money + new thinking" voice.
+- Weights: Regular 400 (italic for flowing titles like *Everyday*), SemiBold 600, Bold 700
+- Use for: hero text, book/product title reveals, big statements
+- Tracking: tight to normal (`letter-spacing: -0.02em` to `0`)
+- The italic weight mirrors the *Everyday* script treatment on the book cover
 
-**Pairing rule:** Cormorant Garamond headline above a Playfair Display subtitle is the house pattern. Accent font replaces the mono layer only when the subject calls for it — never use more than 3 typefaces in one video.
+### Display / Subtitles / Captions — Playfair Display
+High-contrast editorial serif. Consistent across all Everyday AI brand assets.
+- Weights: Regular 400, Bold 700
+- Use for: captions, lower-thirds, chapter labels, pull quotes, CTA sub-copy
+- Tracking: slightly open on all-caps labels (`letter-spacing: 0.08em`)
 
-**Google Fonts import (include in every composition):**
+### Spaced Caps Labels — Cinzel or Playfair Display SC
+Matches the spaced-cap treatment on "SWITTENBURG & COMPANY" and "THE DIGITAL PLAYBOOK" in the brand assets.
+- Use for: company name lockups, section labels, badge text
+- Always uppercase, wide tracking (`letter-spacing: 0.15em–0.25em`)
+
+### Accent font — pick per project
+Swap in one accent typeface when the subject benefits:
+- Data / AI metrics / dashboard content → `Space Mono` (terminal precision)
+- High-energy / challenge / momentum content → `Barlow Condensed` (kinetic urgency)
+- Leadership / executive content → `EB Garamond` (institutional gravitas)
+- Never use more than 3 typefaces total in one video.
+
+### Google Fonts import (include in every composition `<head>`):
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 ```
 
 ---
 
-## Logo
+## Logo & Brand Marks
 
-- File: `assets/logo.png` or `assets/logo.svg` — _[describe: wordmark? symbol? color?]_
-- Glow treatment: _[e.g. `filter: drop-shadow(0 0 40px rgba(255,200,0,0.6))`]_
-- Clearspace: _[e.g. half a logo-height on all sides]_
-- Never recolor. Never stretch.
+| Asset | File | Usage |
+|---|---|---|
+| Primary logo | `assets/swittenburg-logo.png` | Outros, lower-thirds, watermarks |
+| S monogram badge | Extract from logo | Corner badges, mid-scene callbacks |
 
-**[TODO — add your logo file to `assets/` and describe it here]**
+**Logo treatment:**
+- On black: use as-is — the gold already glows against dark backgrounds
+- CSS glow: `filter: drop-shadow(0 0 30px rgba(196,150,42,0.5))`
+- Clearspace: minimum half a logo-height on all sides
+- Never recolor. Never stretch. Never rotate.
+- The tagline "STRATEGIC CLARITY. SCALABLE EXECUTION." travels with the logo on outros.
+
+**Thin gold rule** (`border-top: 1px solid #C4962A`) — a signature brand element. Use as dividers above/below the company name and between sections.
+
+---
+
+## Brand Products (reference for copy and visuals)
+
+| Product | Key copy |
+|---|---|
+| **Everyday AI™ Playbook** | "The CEO of Your Life Has a New Chief of Staff" / "Move Different. Scale Different." |
+| **Executive Prompt Playbook™** | "The AI-Powered Manager's Guide to Reclaiming 10+ Hours a Week" / "Real Workflows. Strategic Execution." / Features: R.A.P.I.D. Prompt Framework™ |
+| **Everyday AI™ 3X Challenge** | "3 Prompts × 3 Days a Week = 3x Your Day" / Mon · Wed · Fri / Free Starter Kit |
+| **Everyday AI™ Tribe — 10K by 2026** | "AI tools for leaders & everyday people. You in?" / "One Goal: 10K by 2026" |
 
 ---
 
 ## Motion Rules
 
 - **Entrance only** — every element animates in via `gsap.from()`. Transitions handle exits.
-- **Easing palette:** `power3.out` (entrances), `expo.out` (hero reveals), `sine.inOut` (ambient loops)
-- **Duration bands:** snap 0.3–0.5s, headline 0.5–0.8s, ambient 2–4s
-- **Text stagger:** 0.04–0.08s/character for display, 0.12–0.18s/word for body
-
-**[TODO — adjust easing and timing to match your brand energy]**
+- **Gold first** — the first thing that glows or moves in any scene is always gold.
+- **Easing palette:** `power3.out` (text entrances), `expo.out` (logo reveals), `sine.inOut` (ambient gold shimmer loops)
+- **Duration bands:** label snaps 0.3–0.5s · headline reveals 0.6–0.9s · ambient drifts 2–4s
+- **Text stagger:** 0.05–0.08s/character for display type · 0.15s/word for body
+- **Gold rule lines:** animate width from 0 → 100% on `power2.out`, 0.4–0.6s. A signature Swittenburg motion beat.
+- **Stillness is intentional** — hold a fully composed frame for at least 0.5s before the next entrance.
 
 ---
 
@@ -71,24 +128,38 @@ Precision meets reinvention — deep black canvas, warm gold authority, clean wh
 | Scene change | Transition | Duration | Ease |
 |---|---|---|---|
 | Default | Push slide left | 0.35s | `power2.inOut` |
-| Opener | Zoom through | 0.35s | `power4.inOut` |
-| Outro | Blur crossfade | 0.5s | `sine.inOut` |
+| Opener / brand reveal | Cinematic zoom through | 0.4s | `power4.inOut` |
+| Book/product showcase | Whip pan | 0.3s | `expo.in` into `expo.out` |
+| Outro / CTA hold | Blur crossfade | 0.5s | `sine.inOut` |
 
-**[TODO — pick transitions from the MOTION_PHILOSOPHY.md recipe list]**
+---
+
+## Copy Voice
+
+- **Confident, not arrogant.** Commands attention without shouting.
+- **Short sentences. Strong verbs.** "Move Different. Scale Different." Not "A different approach to scaling."
+- **Numbered/structured benefits** — the brand loves 3s: 3 prompts, 3 days, 3x your day.
+- **Tagline callbacks** — end every video with "Strategic Clarity. Scalable Execution." or "Move Different. Scale Different."
 
 ---
 
 ## What NOT to Do
 
-1. **No flat-color backgrounds** — always add a localized radial glow behind focal elements.
-2. **No generic system fonts** — only the fonts specified above.
-3. **No `Math.random()` or `Date.now()`** — render determinism.
-4. **No exit animations** on any scene except the final — transitions handle exits.
-5. **No stretching the logo.**
+1. **No flat-color backgrounds** — always add a subtle radial gold glow behind focal elements.
+2. **No generic sans-serif fonts** — only the typefaces specified above.
+3. **No neon colors, no purples, no blues** — the palette is black + gold + white only.
+4. **No exit animations** except on the final scene — transitions handle exits.
+5. **No `Math.random()` or `Date.now()`** — render determinism.
+6. **No stretching or recoloring the logo.**
+7. **No hard cuts** — every scene change has a motion bridge (whip, push, zoom, blur).
 
 ---
 
 ## File References
 
-- `assets/logo.png` — _[add your logo]_
-- `assets/brand-tokens.css` — CSS `:root` vars (copy from workspace `assets/brand-tokens.css` and update)
+- `assets/swittenburg-logo.png` — primary logo (gold on black)
+- `assets/everyday-ai-playbook-cover.jpg` — Everyday AI Playbook book cover
+- `assets/executive-prompt-playbook-cover.png` — Executive Prompt Playbook cover
+- `assets/everyday-ai-challenge-banner.png` — 3X Challenge promo banner
+- `assets/everyday-ai-tribe-10k-banner.png` — Tribe 10K mission banner
+- `assets/brand-tokens.css` — CSS `:root` vars — import in every composition

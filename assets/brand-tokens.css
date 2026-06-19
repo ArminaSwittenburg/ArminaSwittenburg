@@ -7,7 +7,8 @@
   --text:         #FFFFFF;
   --text-dim:     #888888;
 
-  /* Typography — update once fonts are chosen */
-  --font-display: "Space Grotesk", system-ui, sans-serif;
-  --font-mono:    "Space Mono", ui-monospace, monospace;
+  /* Typography */
+  --font-headline: "Cormorant Garamond", "Georgia", serif;        /* hero text, scene titles */
+  --font-display:  "Playfair Display", "Georgia", serif;          /* captions, subtitles, lower-thirds */
+  --font-accent:   "Space Mono", ui-monospace, monospace;         /* override per-project for subject-matter fit */
 }

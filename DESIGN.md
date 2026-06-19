@@ -26,12 +26,21 @@ Precision meets reinvention — deep black canvas, warm gold authority, clean wh
 
 ## Typography
 
-- **Headline font** — _[e.g. Druk Wide Bold / Space Grotesk Bold / Syne]_. Use for: hero text, scene titles.
-- **Body font** — _[e.g. Inter / DM Sans / Roboto Mono]_. Use for: captions, lower-thirds, body copy.
+- **Headline font — Cormorant Garamond (SemiBold 600 / Bold 700)** — luxury editorial serif. Use for: hero text, scene titles, big statements, logo lockups. The "old money" voice.
+- **Display / Subtitles — Playfair Display (Regular 400 / Bold 700)** — high-contrast editorial serif. Use for: captions, lower-thirds, chapter titles, pull quotes. Ties directly to the Everyday AI Playbook, Executive Prompt Playbook, 3X Challenge, and Facebook Group promo brand.
+- **Accent fonts — pick per project** based on subject matter to give key words more meaning. Examples:
+  - Fintech / data / charts → `Space Mono` or `JetBrains Mono` (terminal precision)
+  - Web3 / crypto energy → `Orbitron` or `Exo 2` (forward-looking tech)
+  - Authority / legal / contracts → `EB Garamond` (institutional gravitas)
+  - Movement / urgency → `Barlow Condensed` or `Bebas Neue` (kinetic punch)
 
-Pair rule: _[e.g. "Always put the mono label above the display headline"]_
+**Pairing rule:** Cormorant Garamond headline above a Playfair Display subtitle is the house pattern. Accent font replaces the mono layer only when the subject calls for it — never use more than 3 typefaces in one video.
 
-**[TODO — specify your fonts and pairing rule]**
+**Google Fonts import (include in every composition):**
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+```
 
 ---
 

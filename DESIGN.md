@@ -6,11 +6,7 @@
 
 ## Style Prompt
 
-> _Describe the brand feel in 2–3 sentences. Who is the audience? What's the mood?_
->
-> Example: "Command-center meets fintech: deep navy backgrounds, sharp gold accents, confident mono type. The vibe is Wall Street precision crossed with Web3 momentum. Builds feel like a Bloomberg terminal coming to life."
-
-**[TODO — fill in your brand positioning here]**
+Precision meets reinvention — deep black canvas, warm gold authority, clean white clarity. The vibe is New Wall Street: old money discipline crossed with Web3 momentum. Compositions feel like a financial terminal coming to life with confidence and purpose.
 
 ---
 
@@ -18,14 +14,13 @@
 
 | Token | Hex | Role |
 |---|---|---|
-| `--bg` | `#000000` | Primary background |
-| `--surface` | `#111111` | Cards, panels |
-| `--accent` | `#FFFFFF` | Primary accent — highlights, CTAs |
-| `--accent-2` | `#FFFFFF` | Secondary accent — use sparingly |
+| `--bg` | `#0D0D0D` | Primary background |
+| `--surface` | `#1A1A1A` | Cards, panels, surfaces |
+| `--accent` | `#C4962A` | Primary accent — gold highlights, CTAs, numbers |
+| `--accent-glow` | `rgba(196,150,42,0.4)` | Gold halo glow (drop-shadow, text-shadow) |
 | `--text` | `#FFFFFF` | Primary text |
 | `--text-dim` | `#888888` | Secondary/meta text |
-
-**[TODO — replace with your actual hex values]**
+| `--border` | `#2A2A2A` | Borders, dividers, hairlines |
 
 ---
 

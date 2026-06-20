@@ -76,7 +76,7 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="44.37"
+      data-duration="56.37"
       data-width="1080"
       data-height="1920"
     >
@@ -86,7 +86,7 @@
         data-composition-id="ambient-bg"
         data-composition-src="compositions/ambient-bg.html"
         data-start="0"
-        data-duration="44.37"
+        data-duration="56.37"
         data-track-index="0"
         data-width="1080"
         data-height="1920"
@@ -157,12 +157,12 @@
         src="assets/clip3.mp4"
       ></audio>
 
-      <!-- Clip 4: Challenge (29.37–37.37s) — "Get uncomfortable. It can change your life." -->
+      <!-- Clip 4: Challenge (29.37–49.37s) — "Get uncomfortable. It can change your life." + full close -->
       <div id="face-wrap-4" class="face-wrap">
         <video
           id="face-video-4"
           data-start="29.37"
-          data-duration="8"
+          data-duration="20"
           data-track-index="9"
           src="assets/clip4.mp4"
           muted
@@ -172,7 +172,7 @@
       <audio
         id="face-audio-4"
         data-start="29.37"
-        data-duration="8"
+        data-duration="20"
         data-track-index="10"
         data-volume="1"
         src="assets/clip4.mp4"
@@ -245,7 +245,7 @@
         class="scene-layer"
         data-composition-id="scene6-cta"
         data-composition-src="compositions/scene6-cta.html"
-        data-start="37.37"
+        data-start="49.37"
         data-duration="7"
         data-track-index="3"
         data-width="1080"
@@ -258,7 +258,7 @@
         data-composition-id="captions"
         data-composition-src="compositions/captions.html"
         data-start="0"
-        data-duration="44.37"
+        data-duration="56.37"
         data-track-index="4"
         data-width="1080"
         data-height="1920"
@@ -285,14 +285,14 @@
       mainTl.fromTo("#face-video-3", { scale: 1.0 }, { scale: 1.025, duration: 10, ease: "none" }, 19.37);
       mainTl.to("#face-wrap-3", { opacity: 0, duration: 0.7, ease: "power2.in" }, 28.67);
 
-      // ── Clip 4 (29.37–37.37s): Challenge ──
+      // ── Clip 4 (29.37–49.37s): Challenge — full 20s, lets speaker finish ──
       mainTl.to("#face-wrap-4", { opacity: 1, duration: 0.5, ease: "power2.out" }, 29.37);
-      mainTl.fromTo("#face-video-4", { scale: 1.0 }, { scale: 1.025, duration: 8, ease: "none" }, 29.37);
-      // Clip4 fades fully out before the CTA outro locks in at 37.37s
-      mainTl.to("#face-wrap-4", { opacity: 0, duration: 0.8, ease: "power2.in" }, 36.57);
+      mainTl.fromTo("#face-video-4", { scale: 1.0 }, { scale: 1.04, duration: 20, ease: "none" }, 29.37);
+      // Clip4 fades fully out before the CTA outro locks in at 49.37s
+      mainTl.to("#face-wrap-4", { opacity: 0, duration: 0.8, ease: "power2.in" }, 48.57);
 
       // Pad to data-duration (Law #11 — prevents black-frame flash)
-      mainTl.set({}, {}, 44.37);
+      mainTl.set({}, {}, 56.37);
       window.__timelines["main"] = mainTl;
     </script>
   </body>

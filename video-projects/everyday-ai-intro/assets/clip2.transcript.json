@@ -1,0 +1,434 @@
+{
+  "text": "i'm ones are about every day and where is that it's insane that was our business will not help me is is going to a farm i can actually help my line in getting the question that are worth worth it he",
+  "words": [
+    {
+      "word": " i'm",
+      "start": 1.03,
+      "end": 1.41
+    },
+    {
+      "word": " ones",
+      "start": 1.48,
+      "end": 1.82
+    },
+    {
+      "word": " are",
+      "start": 1.83,
+      "end": 1.98
+    },
+    {
+      "word": " about",
+      "start": 1.99,
+      "end": 2.46
+    },
+    {
+      "word": " every",
+      "start": 2.47,
+      "end": 2.84
+    },
+    {
+      "word": " day",
+      "start": 2.85,
+      "end": 3.31
+    },
+    {
+      "word": " and",
+      "start": 3.32,
+      "end": 3.78
+    },
+    {
+      "word": " where",
+      "start": 3.79,
+      "end": 3.93
+    },
+    {
+      "word": " is",
+      "start": 3.94,
+      "end": 4.13
+    },
+    {
+      "word": " that",
+      "start": 4.14,
+      "end": 4.57
+    },
+    {
+      "word": " it's",
+      "start": 4.58,
+      "end": 5.03
+    },
+    {
+      "word": " insane",
+      "start": 5.22,
+      "end": 5.7
+    },
+    {
+      "word": " that",
+      "start": 5.71,
+      "end": 5.92
+    },
+    {
+      "word": " was",
+      "start": 5.93,
+      "end": 6.36
+    },
+    {
+      "word": " our",
+      "start": 6.37,
+      "end": 6.7
+    },
+    {
+      "word": " business",
+      "start": 7.14,
+      "end": 7.55
+    },
+    {
+      "word": " will",
+      "start": 7.56,
+      "end": 7.82
+    },
+    {
+      "word": " not",
+      "start": 7.83,
+      "end": 8.05
+    },
+    {
+      "word": " help",
+      "start": 8.06,
+      "end": 8.28
+    },
+    {
+      "word": " me",
+      "start": 8.29,
+      "end": 8.59
+    },
+    {
+      "word": " is",
+      "start": 8.6,
+      "end": 8.79
+    },
+    {
+      "word": " is",
+      "start": 8.8,
+      "end": 8.95
+    },
+    {
+      "word": " going",
+      "start": 8.96,
+      "end": 9.24
+    },
+    {
+      "word": " to",
+      "start": 9.25,
+      "end": 9.39
+    },
+    {
+      "word": " a",
+      "start": 9.4,
+      "end": 9.6
+    },
+    {
+      "word": " farm",
+      "start": 9.61,
+      "end": 9.91
+    },
+    {
+      "word": " i",
+      "start": 9.92,
+      "end": 10.25
+    },
+    {
+      "word": " can",
+      "start": 10.26,
+      "end": 10.55
+    },
+    {
+      "word": " actually",
+      "start": 10.56,
+      "end": 11.06
+    },
+    {
+      "word": " help",
+      "start": 11.07,
+      "end": 11.36
+    },
+    {
+      "word": " my",
+      "start": 11.37,
+      "end": 11.55
+    },
+    {
+      "word": " line",
+      "start": 11.56,
+      "end": 12.03
+    },
+    {
+      "word": " in",
+      "start": 12.42,
+      "end": 12.75
+    },
+    {
+      "word": " getting",
+      "start": 12.79,
+      "end": 13.25
+    },
+    {
+      "word": " the",
+      "start": 13.26,
+      "end": 13.37
+    },
+    {
+      "word": " question",
+      "start": 13.38,
+      "end": 13.86
+    },
+    {
+      "word": " that",
+      "start": 13.87,
+      "end": 14.08
+    },
+    {
+      "word": " are",
+      "start": 14.09,
+      "end": 14.24
+    },
+    {
+      "word": " worth",
+      "start": 14.25,
+      "end": 14.65
+    },
+    {
+      "word": " worth",
+      "start": 14.66,
+      "end": 14.97
+    },
+    {
+      "word": " it",
+      "start": 14.98,
+      "end": 15.26
+    },
+    {
+      "word": " he",
+      "start": 15.27,
+      "end": 15.74
+    }
+  ],
+  "segments": [
+    {
+      "start": 1.03,
+      "end": 15.74,
+      "text": "i'm ones are about every day and where is that it's insane that was our business will not help me is is going to a farm i can actually help my line in getting the question that are worth worth it he",
+      "words": [
+        {
+          "word": " i'm",
+          "start": 1.03,
+          "end": 1.41
+        },
+        {
+          "word": " ones",
+          "start": 1.48,
+          "end": 1.82
+        },
+        {
+          "word": " are",
+          "start": 1.83,
+          "end": 1.98
+        },
+        {
+          "word": " about",
+          "start": 1.99,
+          "end": 2.46
+        },
+        {
+          "word": " every",
+          "start": 2.47,
+          "end": 2.84
+        },
+        {
+          "word": " day",
+          "start": 2.85,
+          "end": 3.31
+        },
+        {
+          "word": " and",
+          "start": 3.32,
+          "end": 3.78
+        },
+        {
+          "word": " where",
+          "start": 3.79,
+          "end": 3.93
+        },
+        {
+          "word": " is",
+          "start": 3.94,
+          "end": 4.13
+        },
+        {
+          "word": " that",
+          "start": 4.14,
+          "end": 4.57
+        },
+        {
+          "word": " it's",
+          "start": 4.58,
+          "end": 5.03
+        },
+        {
+          "word": " insane",
+          "start": 5.22,
+          "end": 5.7
+        },
+        {
+          "word": " that",
+          "start": 5.71,
+          "end": 5.92
+        },
+        {
+          "word": " was",
+          "start": 5.93,
+          "end": 6.36
+        },
+        {
+          "word": " our",
+          "start": 6.37,
+          "end": 6.7
+        },
+        {
+          "word": " business",
+          "start": 7.14,
+          "end": 7.55
+        },
+        {
+          "word": " will",
+          "start": 7.56,
+          "end": 7.82
+        },
+        {
+          "word": " not",
+          "start": 7.83,
+          "end": 8.05
+        },
+        {
+          "word": " help",
+          "start": 8.06,
+          "end": 8.28
+        },
+        {
+          "word": " me",
+          "start": 8.29,
+          "end": 8.59
+        },
+        {
+          "word": " is",
+          "start": 8.6,
+          "end": 8.79
+        },
+        {
+          "word": " is",
+          "start": 8.8,
+          "end": 8.95
+        },
+        {
+          "word": " going",
+          "start": 8.96,
+          "end": 9.24
+        },
+        {
+          "word": " to",
+          "start": 9.25,
+          "end": 9.39
+        },
+        {
+          "word": " a",
+          "start": 9.4,
+          "end": 9.6
+        },
+        {
+          "word": " farm",
+          "start": 9.61,
+          "end": 9.91
+        },
+        {
+          "word": " i",
+          "start": 9.92,
+          "end": 10.25
+        },
+        {
+          "word": " can",
+          "start": 10.26,
+          "end": 10.55
+        },
+        {
+          "word": " actually",
+          "start": 10.56,
+          "end": 11.06
+        },
+        {
+          "word": " help",
+          "start": 11.07,
+          "end": 11.36
+        },
+        {
+          "word": " my",
+          "start": 11.37,
+          "end": 11.55
+        },
+        {
+          "word": " line",
+          "start": 11.56,
+          "end": 12.03
+        },
+        {
+          "word": " in",
+          "start": 12.42,
+          "end": 12.75
+        },
+        {
+          "word": " getting",
+          "start": 12.79,
+          "end": 13.25
+        },
+        {
+          "word": " the",
+          "start": 13.26,
+          "end": 13.37
+        },
+        {
+          "word": " question",
+          "start": 13.38,
+          "end": 13.86
+        },
+        {
+          "word": " that",
+          "start": 13.87,
+          "end": 14.08
+        },
+        {
+          "word": " are",
+          "start": 14.09,
+          "end": 14.24
+        },
+        {
+          "word": " worth",
+          "start": 14.25,
+          "end": 14.65
+        },
+        {
+          "word": " worth",
+          "start": 14.66,
+          "end": 14.97
+        },
+        {
+          "word": " it",
+          "start": 14.98,
+          "end": 15.26
+        },
+        {
+          "word": " he",
+          "start": 15.27,
+          "end": 15.74
+        }
+      ]
+    }
+  ]
+}

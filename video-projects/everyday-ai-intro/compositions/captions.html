@@ -6,37 +6,83 @@
     data-height="1920"
     data-duration="44.37"
   >
-    <!-- Karaoke captions — word-level timing, Playfair Display 700.
-         PLACEHOLDER: timestamps are approximate based on clip description.
-         Replace with actual word-level timestamps once clips 2-4 are
-         transcribed via: npx hyperframes transcribe assets/clip1.mp4
-         then: node scripts/filler-cut.mjs assets/clip1.mp4
-
-         Style: stroke (not pill bg), active word pops to gold and scales up.
-         Brand fonts: Playfair Display Bold, white base, gold active. -->
+    <!-- Karaoke captions — word-level timing via pocketsphinx forced alignment.
+         Composition timestamps = clip-relative time + clip start offset.
+         Gold words mark emphasis moments. -->
 
     <div class="cap-root">
 
-      <!-- Act 1 captions: clip1 hook (0-9.37s approx word onsets) -->
-      <div class="cap" id="cap-1" data-word-start="0.5">There's</div>
-      <div class="cap" id="cap-2" data-word-start="0.85">a</div>
-      <div class="cap" id="cap-3" data-word-start="1.05">lot</div>
-      <div class="cap" id="cap-4" data-word-start="1.35">of</div>
-      <div class="cap" id="cap-5" data-word-start="1.55">conversation</div>
-      <div class="cap" id="cap-6" data-word-start="2.35">about</div>
-      <div class="cap" id="cap-7" data-word-start="2.7">AI</div>
-      <div class="cap" id="cap-8" data-word-start="3.2">—</div>
-      <div class="cap" id="cap-9" data-word-start="3.65">but</div>
-      <div class="cap" id="cap-10" data-word-start="3.9">there's</div>
-      <div class="cap" id="cap-11" data-word-start="4.3">a</div>
-      <div class="cap" id="cap-12" data-word-start="4.5">lot</div>
-      <div class="cap" id="cap-13" data-word-start="4.8">to</div>
-      <div class="cap" id="cap-14" data-word-start="5.1">be</div>
-      <div class="cap cap-gold" id="cap-15" data-word-start="5.4">had.</div>
+      <!-- ── Clip 1: "There's a lot of conversation about AI — but there's a lot to be had." ── -->
+      <div class="cap" id="c1w1">There's</div>
+      <div class="cap" id="c1w2">a</div>
+      <div class="cap" id="c1w3">lot</div>
+      <div class="cap" id="c1w4">of</div>
+      <div class="cap" id="c1w5">conversation</div>
+      <div class="cap" id="c1w6">about</div>
+      <div class="cap cap-gold" id="c1w7">AI</div>
+      <div class="cap" id="c1w8">but</div>
+      <div class="cap" id="c1w9">there's</div>
+      <div class="cap" id="c1w10">a</div>
+      <div class="cap" id="c1w11">lot</div>
+      <div class="cap" id="c1w12">to</div>
+      <div class="cap" id="c1w13">be</div>
+      <div class="cap cap-gold" id="c1w14">had.</div>
+
+      <!-- ── Clip 2 (offset +9.37s): "Will this help me every day? Will this help my life? Can this actually help my business?" ── -->
+      <div class="cap" id="c2w1">Will</div>
+      <div class="cap" id="c2w2">this</div>
+      <div class="cap" id="c2w3">help</div>
+      <div class="cap" id="c2w4">me</div>
+      <div class="cap" id="c2w5">every</div>
+      <div class="cap" id="c2w6">day</div>
+      <div class="cap" id="c2w7">Will</div>
+      <div class="cap" id="c2w8">this</div>
+      <div class="cap" id="c2w9">help</div>
+      <div class="cap" id="c2w10">my</div>
+      <div class="cap cap-gold" id="c2w11">life?</div>
+      <div class="cap" id="c2w12">Can</div>
+      <div class="cap" id="c2w13">this</div>
+      <div class="cap" id="c2w14">actually</div>
+      <div class="cap" id="c2w15">help</div>
+      <div class="cap" id="c2w16">my</div>
+      <div class="cap cap-gold" id="c2w17">business?</div>
+
+      <!-- ── Clip 3 (offset +19.37s): "Yes. You are the first corporation you manage. As the CEO of your life." ── -->
+      <div class="cap cap-gold" id="c3w1">Yes.</div>
+      <div class="cap" id="c3w2">You</div>
+      <div class="cap" id="c3w3">are</div>
+      <div class="cap" id="c3w4">the</div>
+      <div class="cap" id="c3w5">first</div>
+      <div class="cap cap-gold" id="c3w6">corporation</div>
+      <div class="cap" id="c3w7">you</div>
+      <div class="cap cap-gold" id="c3w8">manage.</div>
+      <div class="cap" id="c3w9">As</div>
+      <div class="cap" id="c3w10">the</div>
+      <div class="cap cap-gold" id="c3w11">CEO</div>
+      <div class="cap" id="c3w12">of</div>
+      <div class="cap" id="c3w13">your</div>
+      <div class="cap cap-gold" id="c3w14">life.</div>
+
+      <!-- ── Clip 4 (offset +29.37s): "Do the things that make you a little bit uncomfortable. It can change your life." ── -->
+      <div class="cap" id="c4w1">Do</div>
+      <div class="cap" id="c4w2">the</div>
+      <div class="cap" id="c4w3">things</div>
+      <div class="cap" id="c4w4">that</div>
+      <div class="cap" id="c4w5">make</div>
+      <div class="cap" id="c4w6">you</div>
+      <div class="cap" id="c4w7">a</div>
+      <div class="cap" id="c4w8">little</div>
+      <div class="cap" id="c4w9">bit</div>
+      <div class="cap cap-gold" id="c4w10">uncomfortable.</div>
+      <div class="cap" id="c4w11">It</div>
+      <div class="cap" id="c4w12">can</div>
+      <div class="cap" id="c4w13">change</div>
+      <div class="cap" id="c4w14">your</div>
+      <div class="cap cap-gold" id="c4w15">life.</div>
 
     </div>
 
-        <style>
+    <style>
       @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400.woff2') format('woff2'); }
       @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400i.woff2') format('woff2'); }
       @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; src: url('../assets/fonts/CormorantGaramond-600.woff2') format('woff2'); }
@@ -47,7 +93,7 @@
       @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 400; src: url('../assets/fonts/Cinzel-400.woff2') format('woff2'); }
       @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 600; src: url('../assets/fonts/Cinzel-600.woff2') format('woff2'); }
     </style>
-<style>
+    <style>
       [data-composition-id="captions"] {
         position: absolute;
         inset: 0;
@@ -56,8 +102,6 @@
       [data-composition-id="captions"] .cap-root {
         position: absolute;
         inset: 0;
-        /* Captions DO NOT use flex — each cap is absolutely positioned at the
-           bottom so only ONE is visible at a time (via opacity tween). */
       }
       [data-composition-id="captions"] .cap {
         position: absolute;
@@ -70,7 +114,6 @@
         font-weight: 700;
         font-size: 54px;
         color: #FFFFFF;
-        /* Stroke via layered text-shadow — renders correctly in Chromium headless */
         text-shadow:
           -2px -2px 0 #0D0D0D,
            2px -2px 0 #0D0D0D,
@@ -85,7 +128,6 @@
         opacity: 0;
         will-change: opacity, transform;
       }
-      /* Gold highlight for emphasis words */
       [data-composition-id="captions"] .cap-gold {
         color: #D4A940;
         text-shadow:
@@ -108,41 +150,90 @@
         const SLOT = 44.37;
         const tl = gsap.timeline({ paused: true });
 
-        // Word data: [id, wordStart, wordEnd]
-        // wordEnd = next wordStart - 0.05s overlap gap
+        // [id, compositionStart, compositionEnd]
+        // Clip-relative times + clip start offset.
+        // Clip1 offset=0, Clip2 offset=9.37, Clip3 offset=19.37, Clip4 offset=29.37
         const words = [
-          ["#cap-1",  0.50,  0.82],
-          ["#cap-2",  0.85,  1.02],
-          ["#cap-3",  1.05,  1.32],
-          ["#cap-4",  1.35,  1.52],
-          ["#cap-5",  1.55,  2.32],
-          ["#cap-6",  2.35,  2.67],
-          ["#cap-7",  2.70,  3.18],
-          ["#cap-8",  3.20,  3.62],
-          ["#cap-9",  3.65,  3.87],
-          ["#cap-10", 3.90,  4.27],
-          ["#cap-11", 4.30,  4.47],
-          ["#cap-12", 4.50,  4.77],
-          ["#cap-13", 4.80,  5.07],
-          ["#cap-14", 5.10,  5.37],
-          ["#cap-15", 5.40,  7.50],
+          // ── Clip 1 ──
+          ["#c1w1",  0.38,  0.73],
+          ["#c1w2",  0.74,  0.79],
+          ["#c1w3",  0.80,  0.96],
+          ["#c1w4",  0.97,  1.50],
+          ["#c1w5",  1.51,  2.47],
+          ["#c1w6",  2.48,  2.81],
+          ["#c1w7",  2.82,  4.60],  // AI — long hold
+          ["#c1w8",  4.96,  5.07],
+          ["#c1w9",  5.08,  5.57],
+          ["#c1w10", 5.58,  5.82],
+          ["#c1w11", 5.83,  6.82],
+          ["#c1w12", 6.83,  7.10],
+          ["#c1w13", 7.11,  7.42],
+          ["#c1w14", 7.43,  9.30],  // had. — holds to clip end
+
+          // ── Clip 2 (offset +9.37) ──
+          ["#c2w1",  10.84, 11.03],
+          ["#c2w2",  11.04, 11.14],
+          ["#c2w3",  11.15, 11.80],
+          ["#c2w4",  11.81, 11.89],
+          ["#c2w5",  11.90, 12.21],
+          ["#c2w6",  12.22, 13.15],
+          ["#c2w7",  13.16, 13.86],
+          ["#c2w8",  13.87, 15.06],
+          ["#c2w9",  15.07, 15.29],
+          ["#c2w10", 15.30, 15.39],
+          ["#c2w11", 15.40, 15.57],  // life?
+          ["#c2w12", 15.58, 16.12],
+          ["#c2w13", 16.13, 16.75],
+          ["#c2w14", 16.76, 17.36],
+          ["#c2w15", 17.37, 17.65],
+          ["#c2w16", 17.66, 17.91],
+          ["#c2w17", 17.92, 19.30],  // business? — holds to clip end
+
+          // ── Clip 3 (offset +19.37) ──
+          ["#c3w1",  19.97, 20.19],  // Yes.
+          ["#c3w2",  20.20, 20.42],
+          ["#c3w3",  20.43, 20.55],
+          ["#c3w4",  20.56, 20.96],
+          ["#c3w5",  20.97, 21.28],  // first
+          ["#c3w6",  21.29, 22.28],  // corporation
+          ["#c3w7",  22.29, 22.43],
+          ["#c3w8",  22.44, 23.13],  // manage.
+          ["#c3w9",  23.14, 25.06],  // As (long gap while visual overlay holds)
+          ["#c3w10", 25.07, 25.20],
+          ["#c3w11", 25.21, 25.94],  // CEO
+          ["#c3w12", 25.95, 26.08],
+          ["#c3w13", 26.09, 26.28],
+          ["#c3w14", 26.29, 29.30],  // life. — holds to clip end
+
+          // ── Clip 4 (offset +29.37) ──
+          ["#c4w1",  29.37, 29.80],  // Do
+          ["#c4w2",  29.81, 30.24],
+          ["#c4w3",  30.25, 30.52],
+          ["#c4w4",  30.53, 30.63],
+          ["#c4w5",  30.64, 30.75],
+          ["#c4w6",  30.76, 31.05],
+          ["#c4w7",  31.06, 31.71],
+          ["#c4w8",  31.72, 32.47],
+          ["#c4w9",  32.48, 33.05],
+          ["#c4w10", 33.06, 35.20],  // uncomfortable. — long hold
+          ["#c4w11", 35.21, 35.39],
+          ["#c4w12", 35.40, 35.49],
+          ["#c4w13", 35.50, 35.69],
+          ["#c4w14", 35.70, 36.28],
+          ["#c4w15", 36.29, 37.30],  // life.
         ];
 
         words.forEach(function ([id, start, end]) {
-          // Pop in with a micro scale
           tl.fromTo(S + id,
             { opacity: 0, scale: 0.92 },
             { opacity: 1, scale: 1.0, duration: 0.08, ease: "power2.out" },
             start
           );
-          // Fade out at word end
           tl.to(S + id,
             { opacity: 0, duration: 0.06, ease: "power1.in" },
             end
           );
         });
-
-        // Captions only run during clip1 speech (≈0.5-7.5s) — nothing after that.
 
         tl.set({}, {}, SLOT);
         window.__timelines = window.__timelines || {};

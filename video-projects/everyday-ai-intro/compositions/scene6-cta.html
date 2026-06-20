@@ -1,0 +1,257 @@
+<template id="scene6-cta-template">
+  <div
+    data-composition-id="scene6-cta"
+    data-start="0"
+    data-width="1080"
+    data-height="1920"
+    data-duration="7"
+  >
+    <!-- Scene 6: CTA Outro — 7-second hold.
+         Logo crystallizes, gold rules frame the lockup, shop URL and
+         challenge CTA are front and center. Shimmer sweep passes through
+         at t=3s. Tagline anchors the close.
+         MOTION_PHILOSOPHY: hold the hero — 4+ seconds of stillness. -->
+    <div class="s6-root">
+      <div class="s6-bg"></div>
+
+      <!-- Ambient gold bloom — same radial as brand token -->
+      <div class="s6-bloom"></div>
+
+      <!-- Logo -->
+      <img
+        class="s6-logo"
+        id="s6-logo"
+        src="assets/swittenburg-logo.png"
+        alt="Swittenburg &amp; Company"
+      />
+
+      <!-- Rule above main CTA block -->
+      <div class="s6-rule-top" id="s6-rule-top"></div>
+
+      <!-- CTA block: URL + challenge -->
+      <div class="s6-cta-block" id="s6-cta-block">
+        <div class="s6-url" id="s6-url">shop.swittenburg.com</div>
+
+        <div class="s6-divider" id="s6-divider"></div>
+
+        <div class="s6-cta-line" id="s6-cta-line">
+          <span class="s6-cta-badge">JOIN THE</span>
+          <span class="s6-cta-main">EVERYDAY AI™</span>
+          <span class="s6-cta-badge">CHALLENGE</span>
+        </div>
+      </div>
+
+      <!-- Rule below CTA block -->
+      <div class="s6-rule-bottom" id="s6-rule-bottom"></div>
+
+      <!-- Tagline — the brand close -->
+      <div class="s6-tagline" id="s6-tagline">
+        STRATEGIC CLARITY. SCALABLE EXECUTION.
+      </div>
+
+      <!-- Shimmer sweep — passes once at 3s, once at 5.5s for the hold -->
+      <div class="s6-shimmer" id="s6-shimmer"></div>
+    </div>
+
+        <style>
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400i.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; src: url('../assets/fonts/CormorantGaramond-600.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 600; src: url('../assets/fonts/CormorantGaramond-600i.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 700; src: url('../assets/fonts/CormorantGaramond-700.woff2') format('woff2'); }
+      @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; src: url('../assets/fonts/PlayfairDisplay-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; src: url('../assets/fonts/PlayfairDisplay-700.woff2') format('woff2'); }
+      @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 400; src: url('../assets/fonts/Cinzel-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 600; src: url('../assets/fonts/Cinzel-600.woff2') format('woff2'); }
+    </style>
+<style>
+      [data-composition-id="scene6-cta"] {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      [data-composition-id="scene6-cta"] .s6-root {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        padding: 0 80px;
+      }
+      [data-composition-id="scene6-cta"] .s6-bg {
+        position: absolute;
+        inset: 0;
+        background: #0D0D0D;
+      }
+      [data-composition-id="scene6-cta"] .s6-bloom {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 65% 40% at 50% 50%,
+          rgba(196, 150, 42, 0.10) 0%,
+          transparent 70%
+        );
+      }
+      /* Logo — gold on black, with glow */
+      [data-composition-id="scene6-cta"] .s6-logo {
+        position: relative;
+        z-index: 1;
+        width: 260px;
+        height: auto;
+        filter: drop-shadow(0 0 30px rgba(196, 150, 42, 0.5));
+        opacity: 0;
+        transform: translateY(28px) scale(0.9);
+        margin-bottom: 52px;
+      }
+      [data-composition-id="scene6-cta"] .s6-rule-top {
+        position: relative;
+        z-index: 1;
+        height: 1px;
+        width: 0%;
+        background: linear-gradient(90deg, transparent 0%, #C4962A 20%, #D4A940 50%, #C4962A 80%, transparent 100%);
+        align-self: stretch;
+        margin-bottom: 44px;
+      }
+      [data-composition-id="scene6-cta"] .s6-cta-block {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      /* URL — primary action, Cinzel gold */
+      [data-composition-id="scene6-cta"] .s6-url {
+        font-family: "Cinzel", Georgia, serif;
+        font-size: 42px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        background: linear-gradient(180deg, #D4A940 0%, #C4962A 60%, #a07820 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0 0 16px rgba(196, 150, 42, 0.5));
+        text-align: center;
+      }
+      [data-composition-id="scene6-cta"] .s6-divider {
+        width: 60px;
+        height: 1px;
+        background: rgba(196, 150, 42, 0.5);
+      }
+      [data-composition-id="scene6-cta"] .s6-cta-line {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+      [data-composition-id="scene6-cta"] .s6-cta-badge {
+        font-family: "Cinzel", Georgia, serif;
+        font-size: 22px;
+        font-weight: 400;
+        letter-spacing: 0.28em;
+        color: #AAAAAA;
+        text-transform: uppercase;
+      }
+      [data-composition-id="scene6-cta"] .s6-cta-main {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 700;
+        font-size: 88px;
+        line-height: 0.95;
+        letter-spacing: -0.01em;
+        color: #FFFFFF;
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+        text-align: center;
+      }
+      [data-composition-id="scene6-cta"] .s6-rule-bottom {
+        position: relative;
+        z-index: 1;
+        height: 1px;
+        width: 0%;
+        background: linear-gradient(90deg, transparent 0%, #C4962A 20%, #D4A940 50%, #C4962A 80%, transparent 100%);
+        align-self: stretch;
+        margin-top: 44px;
+        margin-bottom: 36px;
+      }
+      /* Tagline — spaced caps, Cinzel, smallest element */
+      [data-composition-id="scene6-cta"] .s6-tagline {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel", Georgia, serif;
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 0.22em;
+        color: #C4962A;
+        text-transform: uppercase;
+        text-align: center;
+        opacity: 0;
+      }
+      /* Shimmer sweep — diagonal glint over the whole lockup */
+      [data-composition-id="scene6-cta"] .s6-shimmer {
+        position: absolute;
+        top: 0; left: -50%;
+        width: 35%;
+        height: 100%;
+        background: linear-gradient(
+          110deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.12) 50%,
+          transparent 100%
+        );
+        opacity: 0;
+        pointer-events: none;
+        filter: blur(8px);
+      }
+    </style>
+
+    <script src="../assets/gsap.min.js"></script>
+    <script>
+      (function () {
+        const S = '[data-composition-id="scene6-cta"] ';
+        const SLOT = 7;
+        const tl = gsap.timeline({ paused: true });
+
+        // Logo crystallizes from below — first thing that moves
+        tl.to(S + ".s6-logo", {
+          opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.6)"
+        }, 0.15);
+
+        // Top rule draws out from center
+        tl.to(S + ".s6-rule-top", { width: "100%", duration: 0.55, ease: "power2.out" }, 0.6);
+
+        // CTA block rises in
+        tl.to(S + "#s6-cta-block", {
+          opacity: 1, y: 0, duration: 0.5, ease: "power3.out"
+        }, 0.95);
+
+        // Bottom rule seals the lockup
+        tl.to(S + ".s6-rule-bottom", { width: "100%", duration: 0.5, ease: "power2.out" }, 1.35);
+
+        // Tagline fades up last
+        tl.to(S + ".s6-tagline", { opacity: 1, duration: 0.45, ease: "power2.out" }, 1.65);
+
+        // Shimmer sweep at t=3s — glint across the lockup
+        tl.set(S + "#s6-shimmer", { opacity: 1 }, 3.0);
+        tl.fromTo(S + "#s6-shimmer",
+          { x: 0 },
+          { x: "350%", duration: 1.0, ease: "power2.inOut" },
+          3.0
+        );
+        tl.set(S + "#s6-shimmer", { opacity: 0 }, 4.05);
+
+        // Second shimmer pass at t=5.5s — keeps the long hold alive
+        tl.set(S + "#s6-shimmer", { x: 0, opacity: 1 }, 5.5);
+        tl.to(S + "#s6-shimmer", { x: "350%", duration: 0.9, ease: "power2.inOut" }, 5.5);
+        tl.set(S + "#s6-shimmer", { opacity: 0 }, 6.45);
+
+        tl.set({}, {}, SLOT);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["scene6-cta"] = tl;
+      })();
+    </script>
+  </div>
+</template>

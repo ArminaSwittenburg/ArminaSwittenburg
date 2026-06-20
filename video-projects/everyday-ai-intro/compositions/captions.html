@@ -1,0 +1,153 @@
+<template id="captions-template">
+  <div
+    data-composition-id="captions"
+    data-start="0"
+    data-width="1080"
+    data-height="1920"
+    data-duration="44.37"
+  >
+    <!-- Karaoke captions — word-level timing, Playfair Display 700.
+         PLACEHOLDER: timestamps are approximate based on clip description.
+         Replace with actual word-level timestamps once clips 2-4 are
+         transcribed via: npx hyperframes transcribe assets/clip1.mp4
+         then: node scripts/filler-cut.mjs assets/clip1.mp4
+
+         Style: stroke (not pill bg), active word pops to gold and scales up.
+         Brand fonts: Playfair Display Bold, white base, gold active. -->
+
+    <div class="cap-root">
+
+      <!-- Act 1 captions: clip1 hook (0-9.37s approx word onsets) -->
+      <div class="cap" id="cap-1" data-word-start="0.5">There's</div>
+      <div class="cap" id="cap-2" data-word-start="0.85">a</div>
+      <div class="cap" id="cap-3" data-word-start="1.05">lot</div>
+      <div class="cap" id="cap-4" data-word-start="1.35">of</div>
+      <div class="cap" id="cap-5" data-word-start="1.55">conversation</div>
+      <div class="cap" id="cap-6" data-word-start="2.35">about</div>
+      <div class="cap" id="cap-7" data-word-start="2.7">AI</div>
+      <div class="cap" id="cap-8" data-word-start="3.2">—</div>
+      <div class="cap" id="cap-9" data-word-start="3.65">but</div>
+      <div class="cap" id="cap-10" data-word-start="3.9">there's</div>
+      <div class="cap" id="cap-11" data-word-start="4.3">a</div>
+      <div class="cap" id="cap-12" data-word-start="4.5">lot</div>
+      <div class="cap" id="cap-13" data-word-start="4.8">to</div>
+      <div class="cap" id="cap-14" data-word-start="5.1">be</div>
+      <div class="cap cap-gold" id="cap-15" data-word-start="5.4">had.</div>
+
+    </div>
+
+        <style>
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400i.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; src: url('../assets/fonts/CormorantGaramond-600.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 600; src: url('../assets/fonts/CormorantGaramond-600i.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 700; src: url('../assets/fonts/CormorantGaramond-700.woff2') format('woff2'); }
+      @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; src: url('../assets/fonts/PlayfairDisplay-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; src: url('../assets/fonts/PlayfairDisplay-700.woff2') format('woff2'); }
+      @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 400; src: url('../assets/fonts/Cinzel-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 600; src: url('../assets/fonts/Cinzel-600.woff2') format('woff2'); }
+    </style>
+<style>
+      [data-composition-id="captions"] {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      [data-composition-id="captions"] .cap-root {
+        position: absolute;
+        inset: 0;
+        /* Captions DO NOT use flex — each cap is absolutely positioned at the
+           bottom so only ONE is visible at a time (via opacity tween). */
+      }
+      [data-composition-id="captions"] .cap {
+        position: absolute;
+        bottom: 260px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+
+        font-family: "Playfair Display", Georgia, serif;
+        font-weight: 700;
+        font-size: 54px;
+        color: #FFFFFF;
+        /* Stroke via layered text-shadow — renders correctly in Chromium headless */
+        text-shadow:
+          -2px -2px 0 #0D0D0D,
+           2px -2px 0 #0D0D0D,
+          -2px  2px 0 #0D0D0D,
+           2px  2px 0 #0D0D0D,
+          -2px  0   0 #0D0D0D,
+           2px  0   0 #0D0D0D,
+           0   -2px 0 #0D0D0D,
+           0    2px 0 #0D0D0D,
+           0    0   18px rgba(0, 0, 0, 0.6);
+
+        opacity: 0;
+        will-change: opacity, transform;
+      }
+      /* Gold highlight for emphasis words */
+      [data-composition-id="captions"] .cap-gold {
+        color: #D4A940;
+        text-shadow:
+          -2px -2px 0 #0D0D0D,
+           2px -2px 0 #0D0D0D,
+          -2px  2px 0 #0D0D0D,
+           2px  2px 0 #0D0D0D,
+          -2px  0   0 #0D0D0D,
+           2px  0   0 #0D0D0D,
+           0   -2px 0 #0D0D0D,
+           0    2px 0 #0D0D0D,
+          0 0 24px rgba(196, 150, 42, 0.55);
+      }
+    </style>
+
+    <script src="../assets/gsap.min.js"></script>
+    <script>
+      (function () {
+        const S = '[data-composition-id="captions"] ';
+        const SLOT = 44.37;
+        const tl = gsap.timeline({ paused: true });
+
+        // Word data: [id, wordStart, wordEnd]
+        // wordEnd = next wordStart - 0.05s overlap gap
+        const words = [
+          ["#cap-1",  0.50,  0.82],
+          ["#cap-2",  0.85,  1.02],
+          ["#cap-3",  1.05,  1.32],
+          ["#cap-4",  1.35,  1.52],
+          ["#cap-5",  1.55,  2.32],
+          ["#cap-6",  2.35,  2.67],
+          ["#cap-7",  2.70,  3.18],
+          ["#cap-8",  3.20,  3.62],
+          ["#cap-9",  3.65,  3.87],
+          ["#cap-10", 3.90,  4.27],
+          ["#cap-11", 4.30,  4.47],
+          ["#cap-12", 4.50,  4.77],
+          ["#cap-13", 4.80,  5.07],
+          ["#cap-14", 5.10,  5.37],
+          ["#cap-15", 5.40,  7.50],
+        ];
+
+        words.forEach(function ([id, start, end]) {
+          // Pop in with a micro scale
+          tl.fromTo(S + id,
+            { opacity: 0, scale: 0.92 },
+            { opacity: 1, scale: 1.0, duration: 0.08, ease: "power2.out" },
+            start
+          );
+          // Fade out at word end
+          tl.to(S + id,
+            { opacity: 0, duration: 0.06, ease: "power1.in" },
+            end
+          );
+        });
+
+        // Captions only run during clip1 speech (≈0.5-7.5s) — nothing after that.
+
+        tl.set({}, {}, SLOT);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["captions"] = tl;
+      })();
+    </script>
+  </div>
+</template>

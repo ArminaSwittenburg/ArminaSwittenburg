@@ -1,0 +1,203 @@
+<template id="ambient-bg-template">
+  <div
+    data-composition-id="ambient-bg"
+    data-start="0"
+    data-width="1080"
+    data-height="1920"
+    data-duration="44.37"
+  >
+    <div class="amb-root">
+      <!-- Deep black base with a warm gold center bloom -->
+      <div class="amb-base"></div>
+
+      <!-- Subtle perspective grid — gold hairlines receding to horizon -->
+      <div class="amb-grid" id="amb-grid"></div>
+
+      <!-- Center crosshair — Swittenburg signature mark, callback element -->
+      <svg
+        class="amb-crosshair"
+        id="amb-crosshair"
+        viewBox="0 0 60 60"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line x1="30" y1="0" x2="30" y2="22" stroke="#C4962A" stroke-width="1.5"/>
+        <line x1="30" y1="38" x2="30" y2="60" stroke="#C4962A" stroke-width="1.5"/>
+        <line x1="0" y1="30" x2="22" y2="30" stroke="#C4962A" stroke-width="1.5"/>
+        <line x1="38" y1="30" x2="60" y2="30" stroke="#C4962A" stroke-width="1.5"/>
+        <circle cx="30" cy="30" r="2.5" fill="#C4962A"/>
+      </svg>
+
+      <!-- Gold dust particles — drift very slowly -->
+      <div class="amb-particles">
+        <div class="amb-dot" style="left:6%;top:12%"></div>
+        <div class="amb-dot" style="left:18%;top:8%"></div>
+        <div class="amb-dot" style="left:34%;top:22%"></div>
+        <div class="amb-dot" style="left:52%;top:6%"></div>
+        <div class="amb-dot" style="left:71%;top:18%"></div>
+        <div class="amb-dot" style="left:86%;top:10%"></div>
+        <div class="amb-dot" style="left:9%;top:55%"></div>
+        <div class="amb-dot" style="left:28%;top:74%"></div>
+        <div class="amb-dot" style="left:48%;top:82%"></div>
+        <div class="amb-dot" style="left:67%;top:68%"></div>
+        <div class="amb-dot" style="left:83%;top:80%"></div>
+        <div class="amb-dot" style="left:92%;top:48%"></div>
+        <div class="amb-dot" style="left:40%;top:44%"></div>
+        <div class="amb-dot" style="left:60%;top:36%"></div>
+      </div>
+
+      <!-- Edge vignette — always on top of bg, always on -->
+      <div class="amb-vignette"></div>
+    </div>
+
+    <style>
+      [data-composition-id="ambient-bg"] {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      [data-composition-id="ambient-bg"] .amb-root {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background: #0D0D0D;
+      }
+      /* Warm gold bloom radiating from center — brand identity */
+      [data-composition-id="ambient-bg"] .amb-base {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 60% 45% at 50% 48%,
+            rgba(196, 150, 42, 0.08) 0%,
+            rgba(26, 26, 26, 0.6) 55%,
+            #0D0D0D 100%
+          );
+      }
+      /* Perspective grid: vertical lines only on portrait canvas */
+      [data-composition-id="ambient-bg"] .amb-grid {
+        position: absolute;
+        inset: -60px;
+        background-image:
+          linear-gradient(rgba(196, 150, 42, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(196, 150, 42, 0.05) 1px, transparent 1px);
+        background-size: 108px 108px;
+        opacity: 0.7;
+        will-change: transform;
+        transform-origin: 50% 100%;
+      }
+      [data-composition-id="ambient-bg"] .amb-crosshair {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 60px;
+        height: 60px;
+        margin-left: -30px;
+        margin-top: -30px;
+        opacity: 0.14;
+        will-change: transform, opacity;
+      }
+      [data-composition-id="ambient-bg"] .amb-particles {
+        position: absolute;
+        inset: 0;
+      }
+      /* Gold dust specks — tiny, warm, subtle */
+      [data-composition-id="ambient-bg"] .amb-dot {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #C4962A;
+        box-shadow: 0 0 10px rgba(196, 150, 42, 0.6);
+        opacity: 0.35;
+        will-change: transform, opacity;
+      }
+      [data-composition-id="ambient-bg"] .amb-vignette {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 100% 80% at 50% 50%,
+          transparent 45%,
+          rgba(13, 13, 13, 0.3) 75%,
+          rgba(13, 13, 13, 0.88) 100%
+        );
+      }
+    </style>
+
+    <script src="../assets/gsap.min.js"></script>
+    <script>
+      (function () {
+        const tl = gsap.timeline({ paused: true });
+        const scope = '[data-composition-id="ambient-bg"] ';
+        const TOTAL = 44.37;
+
+        // Grid drifts slowly upward — infinite depth illusion
+        const GRID_CYCLE = 16;
+        tl.to(scope + "#amb-grid", {
+          y: -108,
+          duration: GRID_CYCLE,
+          ease: "none",
+          repeat: Math.max(Math.floor(TOTAL / GRID_CYCLE) - 1, 0),
+        }, 0);
+
+        // Crosshair: breathes open at 0.3s on intro
+        tl.fromTo(scope + "#amb-crosshair",
+          { scale: 0.5, opacity: 0 },
+          { scale: 1, opacity: 0.18, duration: 0.8, ease: "expo.out" },
+          0.3
+        );
+        tl.to(scope + "#amb-crosshair",
+          { opacity: 0.08, duration: 2, ease: "sine.inOut" },
+          1.2
+        );
+        // Callback: pulse at YES. moment (scene3, 19.37s)
+        tl.to(scope + "#amb-crosshair",
+          { scale: 1.6, opacity: 0.38, duration: 0.5, ease: "expo.out" },
+          19.37
+        );
+        tl.to(scope + "#amb-crosshair",
+          { scale: 1.2, opacity: 0.12, duration: 1.5, ease: "sine.inOut" },
+          20.1
+        );
+        // Callback: pulse at CTA hold (scene6, 37.37s)
+        tl.to(scope + "#amb-crosshair",
+          { scale: 1.4, opacity: 0.3, duration: 0.7, ease: "expo.out" },
+          37.6
+        );
+        tl.to(scope + "#amb-crosshair",
+          { scale: 1.1, opacity: 0.16, duration: 3, ease: "sine.inOut" },
+          38.5
+        );
+
+        // Gold dust drifts — slow, organic, deterministic
+        const dots = document.querySelectorAll(scope + ".amb-dot");
+        dots.forEach(function (dot, i) {
+          const dx = 24 + (i % 4) * 14;
+          const dy = 20 + ((i + 2) % 4) * 12;
+          const dur = 8 + (i % 5) * 1.8;
+          const cycles = Math.max(Math.floor(TOTAL / (dur * 2)), 1);
+          tl.to(dot, {
+            x: dx * (i % 2 === 0 ? 1 : -1),
+            y: -dy,
+            duration: dur,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: cycles * 2 - 1,
+          }, 0);
+          const opDur = dur * 0.6;
+          const opCycles = Math.max(Math.floor(TOTAL / (opDur * 2)), 1);
+          tl.to(dot, {
+            opacity: 0.6,
+            duration: opDur,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: opCycles * 2 - 1,
+          }, 0);
+        });
+
+        tl.set({}, {}, TOTAL);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["ambient-bg"] = tl;
+      })();
+    </script>
+  </div>
+</template>

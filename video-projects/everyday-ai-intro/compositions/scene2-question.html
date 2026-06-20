@@ -1,0 +1,168 @@
+<template id="scene2-question-template">
+  <div
+    data-composition-id="scene2-question"
+    data-start="0"
+    data-width="1080"
+    data-height="1920"
+    data-duration="5"
+  >
+    <!-- Scene 2: The Question — "WILL THIS HELP YOUR LIFE?"
+         Glass-effect card drops in over the face, staggered word-by-word reveal.
+         Gold rule sweeps under the question on entry. -->
+    <div class="s2-root">
+      <!-- Dark scrim across full width behind the card -->
+      <div class="s2-scrim"></div>
+
+      <!-- Question card -->
+      <div class="s2-card" id="s2-card">
+        <!-- Entry whip streak (top edge) -->
+        <div class="s2-card-rule" id="s2-card-rule"></div>
+
+        <div class="s2-question">
+          <span class="s2-word" id="s2-will">WILL</span>
+          <span class="s2-word" id="s2-this">THIS</span>
+          <span class="s2-word" id="s2-help">HELP</span>
+          <div class="s2-row">
+            <span class="s2-word s2-gold" id="s2-your">YOUR</span>
+            <span class="s2-word s2-gold" id="s2-life">LIFE?</span>
+          </div>
+        </div>
+
+        <!-- Gold rule at base of card -->
+        <div class="s2-base-rule" id="s2-base-rule"></div>
+      </div>
+    </div>
+
+        <style>
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400i.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; src: url('../assets/fonts/CormorantGaramond-600.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 600; src: url('../assets/fonts/CormorantGaramond-600i.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 700; src: url('../assets/fonts/CormorantGaramond-700.woff2') format('woff2'); }
+      @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; src: url('../assets/fonts/PlayfairDisplay-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; src: url('../assets/fonts/PlayfairDisplay-700.woff2') format('woff2'); }
+      @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 400; src: url('../assets/fonts/Cinzel-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 600; src: url('../assets/fonts/Cinzel-600.woff2') format('woff2'); }
+    </style>
+<style>
+      [data-composition-id="scene2-question"] {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      [data-composition-id="scene2-question"] .s2-root {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      [data-composition-id="scene2-question"] .s2-scrim {
+        position: absolute;
+        inset: 0;
+        background: rgba(13, 13, 13, 0.55);
+      }
+      [data-composition-id="scene2-question"] .s2-card {
+        position: relative;
+        width: 920px;
+        padding: 64px 72px 52px;
+        background: rgba(13, 13, 13, 0.78);
+        border: 1px solid rgba(196, 150, 42, 0.35);
+        box-shadow:
+          inset 0 1px 0 rgba(196, 150, 42, 0.18),
+          0 0 60px rgba(196, 150, 42, 0.08);
+        transform: translateY(60px);
+        opacity: 0;
+      }
+      [data-composition-id="scene2-question"] .s2-card-rule {
+        position: absolute;
+        top: 0; left: 0;
+        height: 2px;
+        width: 100%;
+        background: linear-gradient(90deg, #C4962A 0%, #D4A940 50%, transparent 100%);
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
+      [data-composition-id="scene2-question"] .s2-question {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+      }
+      [data-composition-id="scene2-question"] .s2-row {
+        display: flex;
+        gap: 32px;
+      }
+      [data-composition-id="scene2-question"] .s2-word {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 700;
+        font-size: 130px;
+        line-height: 0.95;
+        letter-spacing: -0.02em;
+        color: #FFFFFF;
+        text-shadow:
+          0 0 40px rgba(255, 255, 255, 0.15),
+          0 2px 16px rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        transform: translateY(24px) scale(0.94);
+      }
+      [data-composition-id="scene2-question"] .s2-gold {
+        background: linear-gradient(
+          180deg,
+          #D4A940 0%,
+          #C4962A 50%,
+          #a07820 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: none;
+        filter: drop-shadow(0 0 20px rgba(196, 150, 42, 0.6));
+      }
+      [data-composition-id="scene2-question"] .s2-base-rule {
+        margin-top: 32px;
+        height: 1px;
+        width: 100%;
+        background: #C4962A;
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
+    </style>
+
+    <script src="../assets/gsap.min.js"></script>
+    <script>
+      (function () {
+        const S = '[data-composition-id="scene2-question"] ';
+        const SLOT = 5;
+        const tl = gsap.timeline({ paused: true });
+
+        // Card drops down from above
+        tl.to(S + "#s2-card", {
+          y: 0, opacity: 1, duration: 0.5, ease: "expo.out"
+        }, 0.15);
+
+        // Top rule sweeps in
+        tl.to(S + ".s2-card-rule", { scaleX: 1, duration: 0.4, ease: "power2.out" }, 0.2);
+
+        // Words slam in staggered: WILL, THIS, HELP, YOUR LIFE
+        tl.to(S + "#s2-will", { opacity: 1, y: 0, scale: 1, duration: 0.32, ease: "power3.out" }, 0.45);
+        tl.to(S + "#s2-this", { opacity: 1, y: 0, scale: 1, duration: 0.32, ease: "power3.out" }, 0.75);
+        tl.to(S + "#s2-help", { opacity: 1, y: 0, scale: 1, duration: 0.32, ease: "power3.out" }, 1.05);
+        tl.to(S + "#s2-your", { opacity: 1, y: 0, scale: 1, duration: 0.38, ease: "power3.out" }, 1.42);
+        tl.to(S + "#s2-life", { opacity: 1, y: 0, scale: 1, duration: 0.38, ease: "back.out(2)" }, 1.7);
+
+        // "LIFE?" — extra scale pop on final land
+        tl.fromTo(S + "#s2-life", { scale: 1.06 }, { scale: 1, duration: 0.28, ease: "power2.out" }, 2.1);
+
+        // Base rule sweeps — seals the card
+        tl.to(S + ".s2-base-rule", { scaleX: 1, duration: 0.45, ease: "power2.out" }, 2.05);
+
+        // Hold for remainder of slot
+
+        tl.set({}, {}, SLOT);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["scene2-question"] = tl;
+      })();
+    </script>
+  </div>
+</template>

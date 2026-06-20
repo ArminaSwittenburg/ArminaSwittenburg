@@ -30,15 +30,16 @@
         height: 1920px;
         overflow: hidden;
       }
-      /* All 4 face wrappers share this style — sized to 1080×1920 portrait */
+      /* All 4 face wrappers share this style — sized to 1080×1920 portrait.
+         No explicit z-index: scene-layer divs come later in the DOM and
+         therefore paint on top of face-wraps (DOM order within z-index:auto). */
       .face-wrap {
         position: absolute;
         top: 0; left: 0;
         width: 1080px;
         height: 1920px;
         transform-origin: center center;
-        will-change: transform, opacity;
-        z-index: 1;
+        will-change: opacity;
         opacity: 0;
       }
       .face-wrap video {

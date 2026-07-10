@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Girl Code Campaign — Ad Preview</title>
+<style>
+  :root {
+    --bg: #f0f2f5; --card: #ffffff; --text: #0a0a0a; --muted: #65676b;
+    --border: #e4e6eb; --pink: #EC008C; --gold: #C9A227; --imgbg: #1a1a1a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #18191a; --card: #242526; --text: #e4e6eb; --muted: #b0b3b8; --border: #3a3b3c; }
+  }
+  :root[data-theme="dark"] { --bg: #18191a; --card: #242526; --text: #e4e6eb; --muted: #b0b3b8; --border: #3a3b3c; }
+  :root[data-theme="light"] { --bg: #f0f2f5; --card: #ffffff; --text: #0a0a0a; --muted: #65676b; --border: #e4e6eb; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 24px 12px 60px; }
+  .masthead { text-align: center; margin: 16px auto 6px; }
+  .masthead .brand { font-size: 26px; letter-spacing: 8px; font-weight: 300; text-transform: uppercase; }
+  .masthead .brand .p { color: var(--pink); }
+  .masthead .script { font-family: "Brush Script MT", "Segoe Script", cursive; color: var(--pink); font-size: 26px; margin-top: -4px; }
+  .masthead .sub { color: var(--muted); font-size: 13px; margin-top: 10px; }
+  .masthead .tagline { color: var(--gold); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; margin-top: 6px; }
+  .feed { max-width: 520px; margin: 28px auto 0; display: flex; flex-direction: column; gap: 28px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+  .head { display: flex; align-items: center; gap: 10px; padding: 12px 14px 8px; }
+  .avatar { width: 40px; height: 40px; border-radius: 50%; background: #0a0a0a; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; letter-spacing: 1px; flex-shrink: 0; border: 2px solid var(--pink); }
+  .page { font-weight: 600; font-size: 14.5px; }
+  .sponsored { color: var(--muted); font-size: 12px; }
+  .adno { margin-left: auto; font-size: 11px; color: var(--pink); font-weight: 700; letter-spacing: 1px; white-space: nowrap; }
+  .primary { padding: 4px 14px 12px; font-size: 14.5px; line-height: 1.38; white-space: pre-wrap; }
+  .img { aspect-ratio: 4 / 5; background: linear-gradient(160deg, #0a0a0a 0%, #2b2b2b 55%, #3F4224 130%); color: #fff; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px; position: relative; }
+  .img .badge { position: absolute; top: 14px; left: 14px; background: var(--pink); color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; }
+  .img .who { font-size: 17px; font-weight: 700; }
+  .img .scene { font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.82); margin-top: 6px; }
+  .img .note { font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin-top: 10px; }
+  .linkbar { display: flex; align-items: center; gap: 12px; background: var(--bg); padding: 10px 14px; border-top: 1px solid var(--border); }
+  .linkmeta { min-width: 0; }
+  .domain { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .5px; }
+  .headline { font-weight: 700; font-size: 14.5px; margin-top: 1px; }
+  .desc { color: var(--muted); font-size: 13px; margin-top: 1px; }
+  .cta { margin-left: auto; flex-shrink: 0; background: var(--pink); color: #fff; border-radius: 6px; padding: 9px 14px; font-size: 13.5px; font-weight: 600; }
+  .social { display: flex; justify-content: space-around; color: var(--muted); font-size: 13.5px; padding: 8px 10px; border-top: 1px solid var(--border); }
+  footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="masthead">
+  <div class="brand"><span class="p">G</span>IRL <span class="p">C</span>ODE</div>
+  <div class="script">couture</div>
+  <div class="tagline">Discipline · Strength · Sisterhood</div>
+  <div class="sub">"Girl Code" campaign — 10 UGC Facebook ads for The Code Maxi · image slots show the AI-prompt scene for each model</div>
+</div>
+<div class="feed" id="feed"></div>
+<footer>Girl Code Couture · Coded to Elevate · That's the code.</footer>
+<script>
+const ads = [
+  { n:"01", who:"Jasmine, 21 — college senior", scene:"Dorm-room mirror selfie, LED lights, high puff + gold hoops, playful confident pose in The Code Maxi.",
+    primary:"POV: your whole dorm keeps asking where your dress is from 🖤 Girl code says share the link, so… The Code Maxi by Girl Code Couture. Ribbed, snatched, strap-adjustable, and the slit hits perfectly. Wore it once and my group chat hasn't been the same. Under [PRICE] at [SHOP LINK]. That's the code. ✨",
+    headline:"The Dress My Whole Dorm Asked About", desc:"Under [PRICE]. That's the code" },
+  { n:"02", who:"Maya, 28 — marketing manager", scene:"Golden-hour street style leaving a glass office building, blazer over one shoulder, tote in hand.",
+    primary:"This dress clocked in at 9 and clocked OUT at happy hour 🍸 Blazer on = meeting-ready. Blazer off = the girls' table on the patio. The Code Maxi by Girl Code Couture — ribbed knit that survives a desk day, adjustable straps, and a slit that says off the clock. Girl code says put your work wives on: [SHOP LINK]. That's the code. 🖤",
+    headline:"One Dress. Desk to Drinks. Done.", desc:"Meeting-ready. Patio-ready." },
+  { n:"03", who:"Brianna, 32 — new mom", scene:"Bright lived-in living room, messy bun, coffee in hand, baby toys blurred in the background, real-life glow.",
+    primary:"Mama, when's the last time you felt cute in under 30 seconds? 🖤 The Code Maxi is one piece, zero thinking: stretchy enough to chase a toddler, ribbed enough to look intentional, comfy enough for nap trap duty. First dress in months that made me feel like ME and not just \"mom.\" Girl code says tell the mommas: [SHOP LINK]. That's the code. ✨",
+    headline:"The 30-Second Mom Glow-Up Dress", desc:"One piece. Zero effort." },
+  { n:"04", who:"Tiana, 26 — curvy creator", scene:"Bedroom full-length mirror with ring-light glow, soft-glam waves, hand on hip, radiant smile, curves celebrated.",
+    primary:"Curvy girls, the fear of ordering a bodycon dress online? Cancelled. 🙅🏽‍♀️ The Code Maxi hugs, it does not grip — ribbed stretch knit that moves WITH your curves, adjustable straps for the chest, a slit for the leg moment, and zero digging anywhere. A dress that loves your body back. Girl code says share it: [SHOP LINK]. That's the code. 🖤",
+    headline:"Finally, Bodycon That Loves Curves", desc:"It hugs. It never grips." },
+  { n:"05", who:"Denise, 54 — ageless chic", scene:"Sunlit garden patio, silver-gray crop + statement glasses, iced tea and gold bangles, unbothered elegance.",
+    primary:"54 and wearing the dress \"they\" said was for the young girls 💅🏽 The Code Maxi doesn't do age limits — elegant V-neck, ribbed knit that falls exactly where you want it, a slit that's grown and graceful. I've worn it to a gallery opening AND Sunday dinner. Girl code doesn't retire, ladies: [SHOP LINK]. That's the code. 🖤",
+    headline:"Bodycon With No Age Limit. Period.", desc:"Elegance is the standard." },
+  { n:"06", who:"Alexis, 29 — travel creator", scene:"Rooftop over the ocean at sunset, braids in a bun, layered gold jewelry, laughing vacation-photo energy.",
+    primary:"Balled up in my carry-on for 9 hours. Shook it out. ZERO wrinkles ✈️ The Code Maxi is crinkle-ribbed on purpose — it physically cannot look bad. Sneakers at the airport, sandals at dinner, slit out for the photos. Packs smaller than your toiletry bag. Travel girls, girl code says share the cheat code: [SHOP LINK]. That's the code. 🌅",
+    headline:"The Dress That Can't Wrinkle", desc:"Packs small. Travels far." },
+  { n:"07", who:"Camille, 30 — date-night glam", scene:"Restaurant entrance at night, city-lights bokeh, red lip + gold hoops + strappy heels, slow confident turn.",
+    primary:"Wore this on date night and he didn't hear a WORD the waiter said 😌 The Code Maxi: V-neck sitting perfect, straps that stay put, and a slit that causes problems (the good kind). Ribbed stretch knit = you can actually eat at dinner. Comfort AND chaos. Girl code says warn your sisters before you wear it: [SHOP LINK]. That's the code. ❤️‍🔥",
+    headline:"The Date Night Dress. THE One.", desc:"Comfort and chaos. Wear it." },
+  { n:"08", who:"Kayla, 24 — brunch bestie", scene:"Sunny brunch patio with string lights and mimosas, claw clip + glossy lip, mid-laugh with the girls blurred behind.",
+    primary:"The group chat found a dress and now it's an US thing 🥂 One link sent on Tuesday → three of us wearing The Code Maxi at brunch by Saturday. Different bodies, different heights, ate on EVERYBODY. Ribbed, stretchy, adjustable straps — it just works. Send it to your girls right now, that's literally the point: [SHOP LINK]. That's the code. 🖤",
+    headline:"The Group Chat Approved Dress", desc:"One link. Whole crew ate." },
+  { n:"09", who:"Simone, 27 — fitness girl", scene:"Walking out of the gym, slicked ponytail, duffel on shoulder, white sneakers + orange headwrap with the dress.",
+    primary:"Gym girls, what do you wear when you have somewhere to BE after? 🏋🏾‍♀️ The Code Maxi + sneakers. Ribbed like your favorite set, stretches like your favorite set — but it's a whole dress. Over the sports bra, headwrap on, done. You put in the work; the dress understood the assignment. Tell your gym besties: [SHOP LINK]. That's the code. 💪🏾",
+    headline:"From Last Rep to Looking Like That", desc:"Sneakers-approved bodycon." },
+  { n:"10", who:"Nia, 25 — petite 5'1\"", scene:"Cozy closet room, sleek bob, proudly pointing at the hem ending exactly at her ankle — no hemming needed.",
+    primary:"5'1\" and wearing a maxi that is NOT dragging on the floor. Petite girls, be so serious right now 😭 The Code Maxi ends at my ankle, the straps adjust down for short torsos, and the slit still hits where it's supposed to. No hemming. No heels required. First maxi that respected my height. Short girl code is still girl code: [SHOP LINK]. That's the code. 🖤",
+    headline:"The Maxi That Fits at 5'1\"", desc:"No hem. No heels. It fits." },
+];
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+document.getElementById("feed").innerHTML = ads.map(a => `
+  <article class="card">
+    <div class="head">
+      <div class="avatar">GC</div>
+      <div><div class="page">Girl Code Couture</div><div class="sponsored">Sponsored · 🌐</div></div>
+      <div class="adno">AD ${a.n} / 10</div>
+    </div>
+    <div class="primary">${esc(a.primary)}</div>
+    <div class="img">
+      <div class="badge">UGC image slot · 4:5</div>
+      <div class="who">${esc(a.who)}</div>
+      <div class="scene">${esc(a.scene)}</div>
+      <div class="note">Black ribbed V-neck maxi · spaghetti straps · side slit</div>
+    </div>
+    <div class="linkbar">
+      <div class="linkmeta">
+        <div class="domain">girlcodecouture.com</div>
+        <div class="headline">${esc(a.headline)}</div>
+        <div class="desc">${esc(a.desc)}</div>
+      </div>
+      <div class="cta">Shop Now</div>
+    </div>
+    <div class="social"><span>👍 Like</span><span>💬 Comment</span><span>↗ Share</span></div>
+  </article>`).join("");
+</script>
+</body>
+</html>

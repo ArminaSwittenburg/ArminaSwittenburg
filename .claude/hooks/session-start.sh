@@ -28,3 +28,12 @@ fi
 # often) — fetched fresh into .claude/skills instead of committed to git.
 cd "$CLAUDE_PROJECT_DIR"
 npx --yes skills add heygen-com/hyperframes --agent claude-code --yes
+
+# 4. HyperFrames CLI itself (for matting/rendering, not just the skill docs).
+# onnxruntime-node's postinstall tries to fetch optional GPU/CUDA binaries we
+# never use (matting/rendering here is CPU-only) — that fetch hits a host
+# outside this environment's egress allowlist and hard-fails the whole
+# install. Skip that download explicitly.
+if ! command -v hyperframes >/dev/null 2>&1; then
+  ONNXRUNTIME_NODE_INSTALL=skip npm install -g hyperframes --onnxruntime-node-install=skip
+fi

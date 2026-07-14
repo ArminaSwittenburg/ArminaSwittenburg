@@ -1,11 +1,13 @@
-I am currently working on....... The New Wall Street Project
+# Armina Swittenburg
+### Founder & Systems Builder — turning proven business frameworks into AI-native software
 
-I am certified in............... Blockchain Development with Solidity and Blockchain Architecture, pending is Blockchain and Law
+I build the systems that make AI adoption real, not theoretical.
 
-I am learning................... As much as possible, how the world is changing, fintech and this next phase of new
+- 🧠 **SCALE System™** — the transformation framework everything else runs on
+- 📚 **Everyday AI™** — growing from an education platform into a full AI fluency platform
+- ⚙️ **SKU Genius™** — retail SaaS for fashion brands, expanding into other retail categories
+- 🤖 Building autonomous agent systems for cross-industry implementation
+- 🏗️ AI-powered tools for trades — one of several industry-specific apps in the pipeline
+- 🚀 BIG IMAGINATION -  DO NOT KNOW WHAT TO CALL IT YET
 
-I am looking for help with...... Jumping into projects and exploring my own
-
-How to reach me................. team@arminaswittenburg.com
-
-Fun Fact........................ I am reinventing myself...#2020isayearofnewandimproved
+Founder, Swittenburg & Company. Business Transformation Executive → AI builder.

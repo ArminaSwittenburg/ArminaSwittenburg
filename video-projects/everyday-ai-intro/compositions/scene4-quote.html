@@ -1,0 +1,182 @@
+<template id="scene4-quote-template">
+  <div
+    data-composition-id="scene4-quote"
+    data-start="0"
+    data-width="1080"
+    data-height="1920"
+    data-duration="4.5"
+  >
+    <!-- Scene 4: The Quote — "You are the first corporation you manage."
+         Dark stage with a centered editorial quote card. Gold rule above
+         the attribution. Book cover thumbnail in lower right as a callback.
+         Cormorant Garamond italic — the "old money + new thinking" voice. -->
+    <div class="s4-root">
+      <div class="s4-bg"></div>
+
+      <div class="s4-card" id="s4-card">
+        <!-- Top rule: brand signature entry -->
+        <div class="s4-top-rule" id="s4-top-rule"></div>
+
+        <!-- Quote label -->
+        <div class="s4-label" id="s4-label">EVERYDAY AI™ PLAYBOOK</div>
+
+        <!-- The quote itself — italic Cormorant, large -->
+        <div class="s4-quote" id="s4-quote">
+          "You are the first<br>corporation<br>you manage."
+        </div>
+
+        <!-- Attribution bar -->
+        <div class="s4-attribution-wrap" id="s4-attribution-wrap">
+          <div class="s4-attr-rule" id="s4-attr-rule"></div>
+          <div class="s4-attribution">— ARMINA SWITTENBURG</div>
+        </div>
+      </div>
+
+      <!-- Book cover: bottom-right corner, appears late as a CTA seed -->
+      <img
+        class="s4-book"
+        id="s4-book"
+        src="assets/everyday-ai-playbook-cover.jpg"
+        alt="Everyday AI Playbook"
+      />
+    </div>
+
+        <style>
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400i.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; src: url('../assets/fonts/CormorantGaramond-600.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 600; src: url('../assets/fonts/CormorantGaramond-600i.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 700; src: url('../assets/fonts/CormorantGaramond-700.woff2') format('woff2'); }
+      @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; src: url('../assets/fonts/PlayfairDisplay-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; src: url('../assets/fonts/PlayfairDisplay-700.woff2') format('woff2'); }
+      @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 400; src: url('../assets/fonts/Cinzel-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 600; src: url('../assets/fonts/Cinzel-600.woff2') format('woff2'); }
+    </style>
+<style>
+      [data-composition-id="scene4-quote"] {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      [data-composition-id="scene4-quote"] .s4-root {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      [data-composition-id="scene4-quote"] .s4-bg {
+        position: absolute;
+        inset: 0;
+        background: #0D0D0D;
+      }
+      [data-composition-id="scene4-quote"] .s4-card {
+        position: relative;
+        width: 900px;
+        padding: 72px 80px 64px;
+        border-left: 2px solid #C4962A;
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      [data-composition-id="scene4-quote"] .s4-top-rule {
+        position: absolute;
+        top: 0; left: -2px;
+        height: 2px;
+        width: 0%;
+        background: #C4962A;
+      }
+      [data-composition-id="scene4-quote"] .s4-label {
+        font-family: "Cinzel", Georgia, serif;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        color: #C4962A;
+        text-transform: uppercase;
+        margin-bottom: 36px;
+        opacity: 0;
+      }
+      [data-composition-id="scene4-quote"] .s4-quote {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 72px;
+        line-height: 1.25;
+        color: #FFFFFF;
+        text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      [data-composition-id="scene4-quote"] .s4-attribution-wrap {
+        margin-top: 44px;
+        opacity: 0;
+      }
+      [data-composition-id="scene4-quote"] .s4-attr-rule {
+        height: 1px;
+        width: 0%;
+        background: #C4962A;
+        margin-bottom: 20px;
+      }
+      [data-composition-id="scene4-quote"] .s4-attribution {
+        font-family: "Cinzel", Georgia, serif;
+        font-size: 22px;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        color: #C4962A;
+        text-transform: uppercase;
+      }
+      /* Book cover thumbnail — lower right, softly glowing */
+      [data-composition-id="scene4-quote"] .s4-book {
+        position: absolute;
+        bottom: 140px;
+        right: 52px;
+        width: 130px;
+        height: auto;
+        border-radius: 6px;
+        box-shadow:
+          0 0 30px rgba(196, 150, 42, 0.35),
+          0 8px 24px rgba(0, 0, 0, 0.55);
+        opacity: 0;
+        transform: translateY(24px) scale(0.88);
+      }
+    </style>
+
+    <script src="../assets/gsap.min.js"></script>
+    <script>
+      (function () {
+        const S = '[data-composition-id="scene4-quote"] ';
+        const SLOT = 4.5;
+        const tl = gsap.timeline({ paused: true });
+
+        // Card slides in from the left
+        tl.to(S + "#s4-card", {
+          opacity: 1, x: 0, duration: 0.5, ease: "power3.out"
+        }, 0.15);
+
+        // Top rule draws across
+        tl.to(S + ".s4-top-rule", { width: "100%", duration: 0.45, ease: "power2.out" }, 0.2);
+
+        // Label fades up
+        tl.to(S + ".s4-label", { opacity: 1, duration: 0.38, ease: "power2.out" }, 0.55);
+
+        // Quote text rises
+        tl.to(S + ".s4-quote", {
+          opacity: 1, y: 0, duration: 0.6, ease: "power2.out"
+        }, 0.85);
+
+        // Attribution fades in after quote settles
+        tl.to(S + "#s4-attribution-wrap", { opacity: 1, duration: 0.35, ease: "power2.out" }, 1.65);
+        tl.to(S + ".s4-attr-rule", { width: "100%", duration: 0.38, ease: "power2.out" }, 1.7);
+
+        // Book cover drifts up — visual callback / CTA seed
+        tl.to(S + "#s4-book", {
+          opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.8)"
+        }, 2.2);
+
+        tl.set({}, {}, SLOT);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["scene4-quote"] = tl;
+      })();
+    </script>
+  </div>
+</template>

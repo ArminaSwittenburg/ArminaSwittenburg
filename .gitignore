@@ -1,0 +1,46 @@
+# Node
+node_modules/
+
+# Caches
+.cache/
+.tmp-*/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Hyperframes scratch renders (final.mp4 at each project root ships instead)
+renders/
+
+# Credentials / machine-local
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# Local-only media stash (large raw recordings, source music)
+raw-media/
+
+# Large media in video-projects (tracked via Git LFS or kept local only)
+video-projects/**/*.mp4
+video-projects/**/*.mov
+video-projects/**/*.webm
+video-projects/**/*.wav
+video-projects/**/*.mp3
+video-projects/**/*.png
+video-projects/**/*.jpg
+video-projects/**/*.jpeg
+video-projects/**/*.gif
+video-projects/**/*.webp
+
+# Playwright browser profiles
+.playwright-profile/
+
+# Frame-extraction scratch
+**/renders/frames/
+**/renders/frames-*/
+

@@ -1,0 +1,164 @@
+<template id="scene3-yes-template">
+  <div
+    data-composition-id="scene3-yes"
+    data-start="0"
+    data-width="1080"
+    data-height="1920"
+    data-duration="4"
+  >
+    <!-- Scene 3: The Answer — "YES."
+         Full-frame black stage. "YES." explodes from center in massive
+         Cormorant Garamond with gold chrome gradient. Sub-text follows.
+         Crosshair callback (managed in ambient-bg) fires at this beat. -->
+    <div class="s3-root">
+      <!-- Full black bg — covers face (which has faded in main timeline) -->
+      <div class="s3-bg"></div>
+
+      <!-- Grid lines echo the ambient bg (perspective feel) -->
+      <div class="s3-grid"></div>
+
+      <!-- "YES." hero word — the biggest single moment in the piece -->
+      <div class="s3-yes-wrap" id="s3-yes-wrap">
+        <div class="s3-yes" id="s3-yes">YES.</div>
+      </div>
+
+      <!-- Subtext fades in after YES settles -->
+      <div class="s3-sub" id="s3-sub">Here's what changed everything.</div>
+    </div>
+
+        <style>
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400i.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; src: url('../assets/fonts/CormorantGaramond-600.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 600; src: url('../assets/fonts/CormorantGaramond-600i.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 700; src: url('../assets/fonts/CormorantGaramond-700.woff2') format('woff2'); }
+      @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; src: url('../assets/fonts/PlayfairDisplay-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; src: url('../assets/fonts/PlayfairDisplay-700.woff2') format('woff2'); }
+      @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 400; src: url('../assets/fonts/Cinzel-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 600; src: url('../assets/fonts/Cinzel-600.woff2') format('woff2'); }
+    </style>
+<style>
+      [data-composition-id="scene3-yes"] {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      [data-composition-id="scene3-yes"] .s3-root {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 160px;
+        gap: 36px;
+      }
+      [data-composition-id="scene3-yes"] .s3-bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(13,13,13,0.90) 0%,
+          rgba(13,13,13,0.80) 32%,
+          rgba(13,13,13,0.35) 58%,
+          transparent 72%
+        );
+        opacity: 0;
+      }
+      [data-composition-id="scene3-yes"] .s3-grid {
+        position: absolute;
+        inset: -60px;
+        background-image:
+          linear-gradient(rgba(196, 150, 42, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(196, 150, 42, 0.04) 1px, transparent 1px);
+        background-size: 108px 108px;
+        opacity: 0;
+      }
+      [data-composition-id="scene3-yes"] .s3-yes-wrap {
+        position: relative;
+        z-index: 1;
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      /* Gold chrome gradient on "YES." — the premium move */
+      [data-composition-id="scene3-yes"] .s3-yes {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 700;
+        font-size: 180px;
+        line-height: 0.85;
+        letter-spacing: -0.03em;
+        background: linear-gradient(
+          180deg,
+          #ffe88a 0%,
+          #D4A940 25%,
+          #C4962A 55%,
+          #8a6018 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0 0 40px rgba(196, 150, 42, 0.7))
+                drop-shadow(0 0 80px rgba(196, 150, 42, 0.35));
+      }
+      [data-composition-id="scene3-yes"] .s3-sub {
+        position: relative;
+        z-index: 1;
+        font-family: "Playfair Display", Georgia, serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 46px;
+        letter-spacing: 0.02em;
+        color: #AAAAAA;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        padding: 0 80px;
+      }
+    </style>
+
+    <script src="../assets/gsap.min.js"></script>
+    <script>
+      (function () {
+        const S = '[data-composition-id="scene3-yes"] ';
+        const SLOT = 4;
+        const tl = gsap.timeline({ paused: true });
+
+        // BG and grid rush in immediately — this is a full scene wipe
+        tl.to(S + ".s3-bg", { opacity: 1, duration: 0.25, ease: "power2.in" }, 0);
+        tl.to(S + ".s3-grid", { opacity: 1, duration: 0.4, ease: "power2.out" }, 0.1);
+
+        // "YES." EXPLODES from center
+        tl.to(S + "#s3-yes-wrap", {
+          opacity: 1, scale: 1, duration: 0.55, ease: "expo.out"
+        }, 0.18);
+
+        // Micro overshoot after land
+        tl.to(S + "#s3-yes-wrap", { scale: 1.04, duration: 0.18, ease: "power2.in" }, 0.73);
+        tl.to(S + "#s3-yes-wrap", { scale: 1, duration: 0.22, ease: "back.out(2)" }, 0.91);
+
+        // "Gold halo" pulse on the YES — subtle brightness ping
+        tl.fromTo(S + "#s3-yes",
+          { filter: "drop-shadow(0 0 40px rgba(196,150,42,0.7)) drop-shadow(0 0 80px rgba(196,150,42,0.35))" },
+          { filter: "drop-shadow(0 0 80px rgba(196,150,42,1.0)) drop-shadow(0 0 140px rgba(196,150,42,0.6))",
+            duration: 0.3, ease: "power2.out" },
+          0.65
+        );
+        tl.to(S + "#s3-yes",
+          { filter: "drop-shadow(0 0 40px rgba(196,150,42,0.7)) drop-shadow(0 0 80px rgba(196,150,42,0.35))",
+            duration: 0.6, ease: "power2.inOut" },
+          0.95
+        );
+
+        // Sub-text drifts up after YES settles
+        tl.to(S + "#s3-sub", {
+          opacity: 1, y: 0, duration: 0.5, ease: "power2.out"
+        }, 1.55);
+
+        tl.set({}, {}, SLOT);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["scene3-yes"] = tl;
+      })();
+    </script>
+  </div>
+</template>

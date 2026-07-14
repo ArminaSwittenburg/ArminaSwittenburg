@@ -1,0 +1,180 @@
+<template id="scene1-hook-template">
+  <div
+    data-composition-id="scene1-hook"
+    data-start="0"
+    data-width="1080"
+    data-height="1920"
+    data-duration="5.5"
+  >
+    <!-- Scene 1: Hook — minimal overlay so Armina's face reads clearly.
+         Gold rule sweeps in at top (signature element), company watermark
+         appears, then "A LOT TO BE HAD" anchors the hook phrase. -->
+    <div class="s1-root">
+      <!-- Thin gold rule — brand signature, sweeps from left -->
+      <div class="s1-rule-top" id="s1-rule-top"></div>
+
+      <!-- "SWITTENBURG & CO" watermark — top right -->
+      <div class="s1-watermark" id="s1-watermark">SWITTENBURG & CO</div>
+
+      <!-- Bottom scrim: gradient from transparent (top) to dark (very bottom)
+           so the hook text reads over the face video -->
+      <div class="s1-scrim"></div>
+
+      <!-- Hook phrase: drops in at local t=2.2s -->
+      <div class="s1-hook-wrap" id="s1-hook-wrap">
+        <div class="s1-hook-rule" id="s1-hook-rule"></div>
+        <div class="s1-hook-text">
+          <span class="s1-word" id="s1-w1">A LOT</span>
+          <span class="s1-word s1-gold" id="s1-w2">TO BE HAD.</span>
+        </div>
+      </div>
+    </div>
+
+        <style>
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; src: url('../assets/fonts/CormorantGaramond-400i.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; src: url('../assets/fonts/CormorantGaramond-600.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 600; src: url('../assets/fonts/CormorantGaramond-600i.woff2') format('woff2'); }
+      @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 700; src: url('../assets/fonts/CormorantGaramond-700.woff2') format('woff2'); }
+      @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; src: url('../assets/fonts/PlayfairDisplay-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; src: url('../assets/fonts/PlayfairDisplay-700.woff2') format('woff2'); }
+      @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 400; src: url('../assets/fonts/Cinzel-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 600; src: url('../assets/fonts/Cinzel-600.woff2') format('woff2'); }
+    </style>
+<style>
+      [data-composition-id="scene1-hook"] {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      [data-composition-id="scene1-hook"] .s1-root {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      /* Thin gold rule — brand signature width from 0 to full */
+      [data-composition-id="scene1-hook"] .s1-rule-top {
+        position: absolute;
+        top: 88px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: #C4962A;
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
+      /* Company watermark — Cinzel spaced caps, top right */
+      [data-composition-id="scene1-hook"] .s1-watermark {
+        position: absolute;
+        top: 60px;
+        right: 52px;
+        font-family: "Cinzel", Georgia, serif;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 0.22em;
+        color: #C4962A;
+        opacity: 0;
+        text-transform: uppercase;
+      }
+      /* Bottom scrim — readability for hook text */
+      [data-composition-id="scene1-hook"] .s1-scrim {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 480px;
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(13, 13, 13, 0.72) 60%,
+          rgba(13, 13, 13, 0.92) 100%
+        );
+      }
+      /* Hook phrase container — bottom quarter of canvas */
+      [data-composition-id="scene1-hook"] .s1-hook-wrap {
+        position: absolute;
+        bottom: 160px;
+        left: 0;
+        right: 0;
+        padding: 0 52px;
+        opacity: 0;
+      }
+      /* Thin gold rule above the hook words */
+      [data-composition-id="scene1-hook"] .s1-hook-rule {
+        height: 1px;
+        width: 100%;
+        background: #C4962A;
+        margin-bottom: 24px;
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
+      [data-composition-id="scene1-hook"] .s1-hook-text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      [data-composition-id="scene1-hook"] .s1-word {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 700;
+        font-size: 92px;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        color: #FFFFFF;
+        text-shadow:
+          0 0 40px rgba(255, 255, 255, 0.2),
+          0 2px 12px rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      /* Gold emphasis word */
+      [data-composition-id="scene1-hook"] .s1-gold {
+        background: linear-gradient(
+          180deg,
+          #D4A940 0%,
+          #C4962A 55%,
+          #a07820 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: none;
+        filter: drop-shadow(0 0 18px rgba(196, 150, 42, 0.55));
+      }
+    </style>
+
+    <script src="../assets/gsap.min.js"></script>
+    <script>
+      (function () {
+        const S = '[data-composition-id="scene1-hook"] ';
+        const SLOT = 5.5;
+        const tl = gsap.timeline({ paused: true });
+
+        // Top gold rule sweeps left → right
+        tl.to(S + ".s1-rule-top", { scaleX: 1, duration: 0.55, ease: "power2.out" }, 0.2);
+
+        // Watermark slides up and fades in behind the rule
+        tl.to(S + "#s1-watermark", { opacity: 1, duration: 0.45, ease: "power2.out" }, 0.35);
+
+        // Hook wrap reveals: container fades in
+        tl.to(S + "#s1-hook-wrap", { opacity: 1, duration: 0.01 }, 2.1);
+        // Hook rule sweeps first
+        tl.to(S + ".s1-hook-rule", { scaleX: 1, duration: 0.35, ease: "power2.out" }, 2.1);
+
+        // "A LOT" — slides up
+        tl.to(S + "#s1-w1", {
+          opacity: 1, y: 0, duration: 0.42, ease: "power3.out"
+        }, 2.5);
+        // "TO BE HAD." — gold, slightly delayed
+        tl.to(S + "#s1-w2", {
+          opacity: 1, y: 0, duration: 0.42, ease: "power3.out"
+        }, 2.85);
+
+        // Hold — scene exits at 5.5s via scene-switch (whip in scene2)
+
+        tl.set({}, {}, SLOT);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["scene1-hook"] = tl;
+      })();
+    </script>
+  </div>
+</template>

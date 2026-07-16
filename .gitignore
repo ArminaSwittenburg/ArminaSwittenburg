@@ -1,0 +1,26 @@
+# secrets
+.env
+**/.env
+!.env.example
+!**/.env.example
+
+# raw + edited footage (large binaries, stay local to the container)
+videos/*
+!videos/.gitkeep
+!videos/README.md
+
+# HyperFrames skill catalog — refetched by the SessionStart hook each
+# session instead of committed (large, changes upstream often).
+.claude/skills/*
+!.claude/skills/video-use
+skills-lock.json
+.agents/
+
+# python
+pipeline/video-use/.venv/
+**/__pycache__/
+*.pyc
+*.egg-info/
+
+# node
+node_modules/
